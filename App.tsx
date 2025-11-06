@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,8 +8,9 @@ import Benefits from './components/Benefits';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ThinkingModeModal from './components/ThinkingModeModal';
+import { TranslationProvider } from './services/i18n';
 
-export default function App() {
+const AppContent: React.FC = () => {
     const [theme, setTheme] = useState('light');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,5 +53,13 @@ export default function App() {
             <Footer />
             {isModalOpen && <ThinkingModeModal onClose={closeModal} />}
         </div>
+    );
+};
+
+export default function App() {
+    return (
+        <TranslationProvider>
+            <AppContent />
+        </TranslationProvider>
     );
 }
