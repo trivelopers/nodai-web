@@ -1,0 +1,69 @@
+
+import React from 'react';
+
+const services = [
+    {
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        ),
+        name: 'Inteligencia Artificial',
+        description: 'Analizamos tus datos para descubrir oportunidades y optimizar decisiones con modelos de IA a medida.',
+    },
+    {
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5V4H4zm0 11v5h5v-5H4zm6-6v5h5V9h-5zm6 0v5h5V9h-5zm-6 6v5h5v-5h-5zm6 0v5h5v-5h-5z" />
+            </svg>
+        ),
+        name: 'Automatizaciones de Procesos',
+        description: 'Liberá a tu equipo de tareas repetitivas. Diseñamos flujos de trabajo inteligentes que aumentan la eficiencia.',
+    },
+    {
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+        ),
+        name: 'Turneros Online',
+        description: 'Gestioná tus citas de forma simple y profesional. Menos administración, más clientes satisfechos.',
+    },
+    {
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+        ),
+        name: 'Software a Medida',
+        description: 'Creamos las herramientas que tu negocio necesita. Soluciones robustas, escalables y perfectamente integradas.',
+    },
+];
+
+const Services = () => {
+    return (
+        <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Nuestras Soluciones</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-300">
+                        Tecnología de punta para resolver los desafíos de hoy.
+                    </p>
+                </div>
+                <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                    {services.map((service) => (
+                        <div key={service.name} className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-sm hover:shadow-lg dark:shadow-none dark:hover:bg-slate-600 transition-all duration-300">
+                            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                                {service.icon}
+                            </div>
+                            <h3 className="mt-6 text-lg font-bold text-slate-900 dark:text-white">{service.name}</h3>
+                            <p className="mt-2 text-base text-slate-600 dark:text-slate-300">{service.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Services;
