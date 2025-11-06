@@ -99,7 +99,7 @@ const translationData = {
                     name: 'Fragma Bahía',
                     industry: 'Tecnología',
                     description: 'Empresa de tecnología con 5 años en el rubro, especializada en la venta de cables, adaptadores y artículos electrónicos de uso general. Brindamos soluciones tecnológicas para optimizar sus operaciones comerciales y mejorar la experiencia del cliente.',
-                    logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+                    logo: '/images/fragma-logo.jpg',
                     website: 'https://fragma.com.ar'
                 }
             ],
@@ -453,7 +453,7 @@ const translationData = {
                     name: 'Fragma Bahía',
                     industry: 'Technology',
                     description: 'A technology company with 5 years in the industry, specialized in selling cables, adapters, and general-use electronic items. We provide technological solutions to optimize their commercial operations and improve customer experience.',
-                    logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+                    logo: '/images/fragma-logo.jpg',
                     website: 'https://fragma.com.ar'
                 }
             ],

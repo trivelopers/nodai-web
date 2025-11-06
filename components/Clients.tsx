@@ -18,11 +18,7 @@ const CodemLogo = () => (
     </div>
 );
 
-const FragmaLogo = () => (
-    <div className="w-full h-16 bg-blue-500 rounded-lg flex items-center justify-center px-4">
-        <div className="text-white font-serif text-3xl font-normal tracking-wide">Fragma</div>
-    </div>
-);
+
 
 interface ClientCardProps {
     client: Client;
@@ -35,13 +31,11 @@ const ClientCard: React.FC<ClientCardProps> = ({ client, visitWebsiteLabel, logo
         <div className="flex items-center justify-center h-16 mb-6">
             {client.name === 'COEM' ? (
                 <CodemLogo />
-            ) : client.name === 'Fragma Bahía' ? (
-                <FragmaLogo />
             ) : client.logo ? (
                 <img
                     src={client.logo}
                     alt={logoAlt(client.name)}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain rounded-lg"
                 />
             ) : (
                 <div className="w-full h-full bg-gradient-to-r from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
