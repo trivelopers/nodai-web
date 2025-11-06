@@ -1,0 +1,46 @@
+# Traefik configuration file
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+# Entry points
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+          permanent: true
+
+  websecure:
+    address: ":443"
+
+# Providers
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: traefik
+
+# Certificate resolvers
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      tlsChallenge: {}
+      email: admin@nodai.app # Cambiar por tu email
+      storage: /acme.json
+      # Usar el servidor de staging para pruebas
+      # caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+
+# API and dashboard
+api:
+  dashboard: true
+  insecure: true # Solo para desarrollo
+
+# Logs
+log:
+  level: INFO
+
+accessLog: {}
