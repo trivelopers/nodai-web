@@ -15,12 +15,9 @@ const AppContent: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('nodai-theme');
-        if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
-            setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
-        }
+        // Siempre cargar en modo light por defecto
+        setTheme('light');
+        localStorage.setItem('nodai-theme', 'light');
     }, []);
 
     useEffect(() => {
