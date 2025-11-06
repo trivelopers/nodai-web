@@ -94,6 +94,13 @@ const translationData = {
                     industry: 'Sector Salud',
                     description: 'Consultorios de Especialidades Médicas ubicado en Coronel Suárez, Buenos Aires. Desarrollamos sistemas de gestión médica y soluciones digitales para mejorar la atención al paciente y optimizar los procesos administrativos.',
                     website: 'https://www.coem.ar'
+                },
+                {
+                    name: 'Fragma Bahía',
+                    industry: 'Tecnología',
+                    description: 'Empresa de tecnología con 5 años en el rubro, especializada en la venta de cables, adaptadores y artículos electrónicos de uso general. Brindamos soluciones tecnológicas para optimizar sus operaciones comerciales y mejorar la experiencia del cliente.',
+                    logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+                    website: 'https://fragma.com.ar'
                 }
             ],
             visitWebsite: 'Visitar sitio web →',
@@ -441,6 +448,13 @@ const translationData = {
                     industry: 'Healthcare',
                     description: 'A multi-specialty medical clinic located in Coronel Suárez, Buenos Aires. We developed management systems and digital solutions to improve patient care and streamline administrative processes.',
                     website: 'https://www.coem.ar'
+                },
+                {
+                    name: 'Fragma Bahía',
+                    industry: 'Technology',
+                    description: 'A technology company with 5 years in the industry, specialized in selling cables, adapters, and general-use electronic items. We provide technological solutions to optimize their commercial operations and improve customer experience.',
+                    logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+                    website: 'https://fragma.com.ar'
                 }
             ],
             visitWebsite: 'Visit website →',
@@ -699,7 +713,7 @@ const translationData = {
     },
 } as const;
 
-export type TranslationData = typeof translationData.en;
+export type TranslationData = typeof translationData.es | typeof translationData.en;
 
 interface TranslationContextValue {
     language: Language;

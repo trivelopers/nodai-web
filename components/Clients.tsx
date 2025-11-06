@@ -18,6 +18,12 @@ const CodemLogo = () => (
     </div>
 );
 
+const FragmaLogo = () => (
+    <div className="w-full h-16 bg-blue-500 rounded-lg flex items-center justify-center px-4">
+        <div className="text-white font-serif text-3xl font-normal tracking-wide">Fragma</div>
+    </div>
+);
+
 interface ClientCardProps {
     client: Client;
     visitWebsiteLabel: string;
@@ -29,6 +35,8 @@ const ClientCard: React.FC<ClientCardProps> = ({ client, visitWebsiteLabel, logo
         <div className="flex items-center justify-center h-16 mb-6">
             {client.name === 'COEM' ? (
                 <CodemLogo />
+            ) : client.name === 'Fragma Bahía' ? (
+                <FragmaLogo />
             ) : client.logo ? (
                 <img
                     src={client.logo}
@@ -70,7 +78,7 @@ const ClientCard: React.FC<ClientCardProps> = ({ client, visitWebsiteLabel, logo
 const Clients = () => {
     const { translations, language } = useTranslation();
     const section = translations.clients;
-    const clients: Client[] = section.items;
+    const clients = section.items;
 
     const logoAlt = (name: string) => (language === 'es' ? `Logo de ${name}` : `${name} logo`);
 
@@ -86,7 +94,7 @@ const Clients = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {clients.map((client, index) => (
                         <ClientCard key={index} client={client} visitWebsiteLabel={section.visitWebsite} logoAlt={logoAlt} />
                     ))}
