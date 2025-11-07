@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ onAskNodaiClick, theme, toggleTheme }) 
                     <div className="flex-shrink-0">
                         <a href="#" aria-label="Nodai Home">
                         <img
-                            src={theme === 'dark' ? './public/images/nodai-blanco.png' : './public/images/nodai-negro.png'}
+                            src={theme === 'dark' ? '/images/nodai-blanco.png' : '/images/nodai-negro.png'}
                             alt="Nodai logo"
                             className="h-8 w-auto transition-all duration-300"
                         />
