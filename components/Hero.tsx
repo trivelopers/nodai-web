@@ -6,7 +6,7 @@ const Hero = () => {
     const { title, description, cta } = translations.hero;
 
     return (
-        <section className="relative py-24 sm:py-32 lg:py-40 gradient-bg">
+        <section className="relative py-24 sm:py-32  lg:py-40 gradient-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                     {title}

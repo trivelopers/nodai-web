@@ -29,7 +29,7 @@ const Services = () => {
     const services = translations.services.items;
 
     return (
-        <section id="services" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
+        <section id="services" className="py-20 sm:py-28 scroll-mt-20 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">{translations.services.title}</h2>

@@ -29,7 +29,7 @@ const Benefits = () => {
     const benefits = translations.benefits;
 
     return (
-        <section id="benefits" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-800 scroll-mt-20 transition-colors duration-300">
+        <section id="benefits" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="lg:text-center">
                     <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">{benefits.tag}</h2>
