@@ -17,7 +17,7 @@ const translationData = {
             askNodai: 'Consultar a NodAI',
         },
         hero: {
-            title: 'Impulsamos tu negocio con inteligencia artificial.',
+            title: 'Impulsamos tu negocio con inteligencia.',
             description: 'Desarrollamos soluciones digitales que automatizan, integran y escalan tu empresa.',
             cta: 'Agendá una demo',
         },
@@ -33,10 +33,10 @@ const translationData = {
                     name: 'Automatizaciones de Procesos',
                     description: 'Liberá a tu equipo de tareas repetitivas. Diseñamos flujos de trabajo inteligentes que aumentan la eficiencia.',
                 },
-                {
+                /**{
                     name: 'Turneros Online',
                     description: 'Gestioná tus citas de forma simple y profesional. Menos administración, más clientes satisfechos.',
-                },
+                },**/
                 {
                     name: 'Software a Medida',
                     description: 'Creamos las herramientas que tu negocio necesita. Soluciones robustas, escalables y perfectamente integradas.',
@@ -46,7 +46,7 @@ const translationData = {
         about: {
             title: 'Quiénes somos',
             paragraphs: [
-                'Somos Ingenieros en Sistemas especializados en Inteligencia Artificial, apasionados por transformar desafíos en oportunidades de crecimiento.',
+                'Somos Ingenieros en Sistemas de Información especializados en Inteligencia Artificial, apasionados por transformar desafíos en oportunidades de crecimiento.',
                 'En Nodai, no solo construimos software; creamos alianzas estratégicas. Nos sumergimos en la visión de nuestros clientes para desarrollar soluciones personalizadas que no solo cumplen, sino que superan las expectativas. Brindamos nuestros servicios para crear soluciones de valor que aprovechan el poder de la Inteligencia Artificial.'
             ],
             highlight: 'Combinamos estrategia, diseño y desarrollo para llevar tu negocio al siguiente nivel.',
@@ -59,7 +59,7 @@ const translationData = {
             items: [
                 {
                     name: 'Ahorro de Tiempo',
-                    description: 'Automatizamos tareas para que tu equipo se concentre en lo que realmente importa.',
+                    description: 'Automatizamos procesos repetitivos para que tu equipo se concentre en otras tareas.',
                 },
                 {
                     name: 'Reducción de Errores',
@@ -116,14 +116,14 @@ const translationData = {
             },
         },
         contactForm: {
-            title: 'Contáctanos',
-            description: 'Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad',
+            title: 'Contactanos',
+            description: 'Comentanos sobre tu proyecto y te ayudemos a hacerlo realidad',
             fields: {
                 name: { label: 'Nombre *', placeholder: 'Tu nombre' },
                 email: { label: 'Email *', placeholder: 'tu@email.com' },
                 phone: { label: 'Teléfono', placeholder: '+54 9 291 645-2157' },
                 company: { label: 'Empresa', placeholder: 'Tu empresa' },
-                message: { label: 'Mensaje *', placeholder: 'Cuéntanos sobre tu proyecto o consulta...' },
+                message: { label: 'Mensaje *', placeholder: 'Comentanos sobre tu proyecto o consulta...' },
             },
             submit: {
                 idle: 'Enviar mensaje',

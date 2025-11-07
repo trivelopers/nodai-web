@@ -22,8 +22,13 @@ const Header: React.FC<HeaderProps> = ({ onAskNodaiClick, theme, toggleTheme }) 
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0">
                         <a href="#" aria-label="Nodai Home">
-                            <NodaiLogo className="h-8 text-slate-900 dark:text-white" />
+                        <img
+                            src={theme === 'dark' ? '/nodai-blanco.png' : '/nodai-negro.png'}
+                            alt="Nodai logo"
+                            className="h-8 w-auto transition-all duration-300"
+                        />
                         </a>
+
                     </div>
                     <nav className="hidden md:flex md:space-x-8">
                         {navLinks.map((link) => (

@@ -37,7 +37,7 @@ const Services = () => {
                         {translations.services.description}
                     </p>
                 </div>
-                <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     {services.map((service, index) => (
                         <div key={service.name} className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-sm hover:shadow-lg dark:shadow-none dark:hover:bg-slate-600 transition-all duration-300">
                             <div className="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">

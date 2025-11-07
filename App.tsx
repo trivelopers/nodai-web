@@ -44,7 +44,7 @@ const AppContent: React.FC = () => {
                 <Services />
                 <About />
                 <Benefits />
-                <Clients />
+                {/* <Clients />*/}
                 <CTA />
             </main>
             <Footer />
