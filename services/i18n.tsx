@@ -33,14 +33,22 @@ const translationData = {
                     name: 'Automatizaciones de procesos',
                     description: 'Liberá a tu equipo de tareas repetitivas. Diseñamos flujos de trabajo inteligentes que aumentan la eficiencia.',
                 },
-                /**{
-                    name: 'Turneros Online',
-                    description: 'Gestioná tus citas de forma simple y profesional. Menos administración, más clientes satisfechos.',
-                },**/
                 {
                     name: 'Software a medida',
                     description: 'Creamos las herramientas que tu negocio necesita. Soluciones robustas, escalables y perfectamente integradas.',
                 },
+                {
+                    name: 'Turnero para profesionales médicos',
+                    description: 'Desarrollamos sistemas de gestión de turnos médicos que permiten a los pacientes reservar online y a los profesionales administrar sus agendas con facilidad.',
+                },
+                {
+                    name: 'Asistentes virtuales con IA conectados a WhatsApp',
+                    description: 'Creamos asistentes conversacionales inteligentes que automatizan atención al cliente, reservas y consultas, totalmente integrados con la API oficial de WhatsApp.',
+                    },
+                    {
+        name: 'Gestión comercial y catálogo online',
+        description: 'Construimos plataformas integrales de ventas y stock que permiten administrar productos, pedidos y envíos, con catálogos públicos y automatización de procesos entre múltiples empresas.',
+    }
             ],
         },
         about: {
@@ -386,15 +394,24 @@ const translationData = {
                 {
                     name: 'Process Automation',
                     description: 'Free your team from repetitive tasks. We design smart workflows that boost efficiency.',
-                },/*
-                {
-                    name: 'Online Scheduling',
-                    description: 'Manage appointments simply and professionally. Less admin work, more satisfied clients.',
-                },*/
+                },
                 {
                     name: 'Custom Software',
                     description: 'We build the tools your business needs. Robust, scalable, and perfectly integrated solutions.',
                 },
+                {
+    name: 'Medical Appointment Scheduling System',
+    description: 'We build online scheduling platforms for healthcare professionals, enabling patients to book appointments and manage their visits easily.',
+},
+{
+    name: 'AI-powered Virtual Assistants for WhatsApp',
+    description: 'We design intelligent conversational assistants that automate customer service, bookings, and queries, fully integrated with the official WhatsApp API.',
+},
+{
+    name: 'Business Management and Online Catalog',
+    description: 'We develop integrated platforms for inventory, sales, and logistics, enabling businesses to manage products, orders, and deliveries with public catalogs and multi-company automation.',
+},
+
             ],
         },
         about: {
