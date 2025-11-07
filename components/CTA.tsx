@@ -7,7 +7,7 @@ const CTA = () => {
     const cta = translations.cta;
 
     return (
-        <section id="contact" className="bg-teal-700">
+        <section id="contact" className="bg-teal-700 scroll-mt-20">
             <div className="max-w-4xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                     <span className="block">{cta.heading}</span>

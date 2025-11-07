@@ -8,7 +8,7 @@ const translationData = {
             navLinks: [
                 { name: 'Servicios', href: '#services' },
                 { name: 'Quiénes somos', href: '#about' },
-                { name: 'Clientes', href: '#clients' },
+                /*{ name: 'Clientes', href: '#clients' },*/
                 { name: 'Contacto', href: '#contact' }
             ],
             themeToggleAria: 'Cambiar entre modo claro y oscuro',
@@ -17,12 +17,12 @@ const translationData = {
             askNodai: 'Consultar a NodAI',
         },
         hero: {
-            title: 'Impulsamos tu negocio con inteligencia.',
-            description: 'Desarrollamos soluciones digitales que automatizan, integran y escalan tu empresa.',
+            title: 'Impulsamos tu negocio con IA',
+            description: 'Desarrollamos soluciones digitales que automatizan, integran y permiten escalar tu empresa.',
             cta: 'Agendá una demo',
         },
         services: {
-            title: 'Nuestras Soluciones',
+            title: 'Nuestras soluciones',
             description: 'Tecnología de punta para resolver los desafíos de hoy.',
             items: [
                 {
@@ -30,7 +30,7 @@ const translationData = {
                     description: 'Analizamos tus datos para descubrir oportunidades y optimizar decisiones con modelos de IA a medida.',
                 },
                 {
-                    name: 'Automatizaciones de Procesos',
+                    name: 'Automatizaciones de procesos',
                     description: 'Liberá a tu equipo de tareas repetitivas. Diseñamos flujos de trabajo inteligentes que aumentan la eficiencia.',
                 },
                 /**{
@@ -38,7 +38,7 @@ const translationData = {
                     description: 'Gestioná tus citas de forma simple y profesional. Menos administración, más clientes satisfechos.',
                 },**/
                 {
-                    name: 'Software a Medida',
+                    name: 'Software a medida',
                     description: 'Creamos las herramientas que tu negocio necesita. Soluciones robustas, escalables y perfectamente integradas.',
                 },
             ],
@@ -58,19 +58,19 @@ const translationData = {
             description: 'Más allá del código, generamos resultados medibles para tu empresa.',
             items: [
                 {
-                    name: 'Ahorro de Tiempo',
+                    name: 'Ahorro de tiempo',
                     description: 'Automatizamos procesos repetitivos para que tu equipo se concentre en otras tareas.',
                 },
                 {
-                    name: 'Reducción de Errores',
+                    name: 'Reducción de errores',
                     description: 'Nuestros sistemas minimizan el error humano, garantizando precisión y consistencia.',
                 },
                 {
-                    name: 'Escalabilidad Garantizada',
+                    name: 'Escalabilidad garantizada',
                     description: 'Construimos soluciones flexibles que crecen al mismo ritmo que tu negocio.',
                 },
                 {
-                    name: 'Soporte Personalizado',
+                    name: 'Soporte personalizado',
                     description: 'Te acompañamos en cada paso, ofreciendo soporte y asesoramiento continuo.',
                 },
             ],
@@ -371,7 +371,7 @@ const translationData = {
             askNodai: 'Ask NodAI',
         },
         hero: {
-            title: 'We boost your business with artificial intelligence.',
+            title: 'We boost your business with AI',
             description: 'We build digital solutions that automate, integrate, and scale your company.',
             cta: 'Book a demo',
         },
@@ -386,11 +386,11 @@ const translationData = {
                 {
                     name: 'Process Automation',
                     description: 'Free your team from repetitive tasks. We design smart workflows that boost efficiency.',
-                },
+                },/*
                 {
                     name: 'Online Scheduling',
                     description: 'Manage appointments simply and professionally. Less admin work, more satisfied clients.',
-                },
+                },*/
                 {
                     name: 'Custom Software',
                     description: 'We build the tools your business needs. Robust, scalable, and perfectly integrated solutions.',
