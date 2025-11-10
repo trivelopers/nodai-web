@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import NodaiLogo from './NodaiLogo';
 import LegalModal from './LegalModal';
 import { useTranslation } from '../services/i18n';
 
@@ -20,11 +19,6 @@ const Footer = () => {
 
     const quickLinks = translations.header.navLinks.filter(link => link.href !== '#contact');
 
-    const socialLinks = [
-        { name: 'LinkedIn', href: '#', icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg> },
-        { name: 'Twitter', href: '#', icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.06.088.623 1.943 2.41 3.282 4.54 3.32-.975.76-2.21 1.21-3.56 1.21-.23 0-.46-.01-.68-.04 1.25 1.03 2.89 1.62 4.67 1.62 5.59 0 8.64-4.79 8.64-8.84 0-.13 0-.26-.01-.39.59-.42 1.1-1.02 1.5-1.7z" /></svg> },
-    ];
-
     const contactIcons = {
         whatsapp: (
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -38,18 +32,19 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="space-y-8 xl:col-span-1">
-                        <NodaiLogo className="h-8 text-slate-900 dark:text-white" />
+                        <img
+                            src="/images/nodai-negro.png"
+                            alt="Nodai logo light"
+                            className="block h-8 w-auto dark:hidden"
+                        />
+                        <img
+                            src="/images/nodai-blanco.png"
+                            alt="Nodai logo dark"
+                            className="hidden h-8 w-auto dark:block"
+                        />
                         <p className="text-slate-500 dark:text-slate-400 text-base">
                             {translations.footer.tagline}
                         </p>
-                        <div className="flex space-x-6">
-                            {socialLinks.map((item) => (
-                                <a key={item.name} href={item.href} className="text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400">
-                                    <span className="sr-only">{item.name}</span>
-                                    {item.icon}
-                                </a>
-                            ))}
-                        </div>
                     </div>
                     <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
