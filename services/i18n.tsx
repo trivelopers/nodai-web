@@ -119,8 +119,8 @@ const translationData = {
             heading: '¿Listo para transformar tu negocio?',
             description: 'Hablemos de cómo podemos ayudarte a alcanzar tus objetivos. La primera consulta es sin cargo.',
             buttons: {
-                email: 'Email',
-                whatsapp: 'WhatsApp',
+                email: 'Mandanos un mail',
+                whatsapp: 'Chateá por WhatsApp',
             },
         },
         contactForm: {
@@ -141,8 +141,8 @@ const translationData = {
             error: 'Error al enviar el mensaje. Por favor, intenta de nuevo.',
             directContactQuestion: '¿Prefieres contactarnos directamente?',
             directContactButtons: {
-                email: 'Email',
-                whatsapp: 'WhatsApp',
+                email: 'Mandanos un mail',
+                whatsapp: 'Chateá por WhatsApp',
             },
             emailSubjectPrefix: 'Consulta de',
             emailLabels: {
@@ -482,8 +482,8 @@ const translationData = {
             heading: 'Ready to transform your business?',
             description: 'Let’s talk about how we can help you reach your goals. The first consultation is on us.',
             buttons: {
-                email: 'Email',
-                whatsapp: 'WhatsApp',
+                email: 'Drop us an email',
+                whatsapp: 'Chat on WhatsApp',
             },
         },
         contactForm: {
@@ -504,8 +504,8 @@ const translationData = {
             error: 'There was an error sending your message. Please try again.',
             directContactQuestion: 'Prefer to reach out directly?',
             directContactButtons: {
-                email: 'Email',
-                whatsapp: 'WhatsApp',
+                email: 'Drop us an email',
+                whatsapp: 'Chat on WhatsApp',
             },
             emailSubjectPrefix: 'Inquiry from',
             emailLabels: {

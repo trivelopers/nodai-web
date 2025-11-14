@@ -41,7 +41,8 @@ const serviceIcons = [
 
 const Services = () => {
     const { translations } = useTranslation();
-    const services = translations.services.items;
+    const services = translations.services.items.slice(3);
+    const visibleIcons = serviceIcons.slice(3);
 
     return (
         <section id="services" className="py-20 sm:py-28 scroll-mt-20 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
@@ -56,7 +57,7 @@ const Services = () => {
                     {services.map((service, index) => (
                         <div key={service.name} className="bg-white dark:bg-slate-700 p-8 rounded-lg shadow-sm hover:shadow-lg dark:shadow-none dark:hover:bg-slate-600 transition-all duration-300">
                             <div className="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
-                                {serviceIcons[index]}
+                                {visibleIcons[index] ?? serviceIcons[index]}
                             </div>
                             <h3 className="mt-6 text-lg font-bold text-slate-900 dark:text-white">{service.name}</h3>
                             <p className="mt-2 text-base text-slate-600 dark:text-slate-300">{service.description}</p>
