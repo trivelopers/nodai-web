@@ -15,7 +15,7 @@ const NodaiLogo: React.FC<LogoProps> = ({ className }) => {
                 <circle cx="5.85938" cy="3.51562" r="5.85938" fill="currentColor"/>
                 <circle cx="5.85938" cy="30.2656" r="5.85938" fill="currentColor"/>
             </svg>
-            <span className="text-3xl font-bold tracking-tighter text-current">nodai</span>
+            <span className="text-3xl font-bold tracking-tighter text-current">NODAI</span>
         </div>
     );
 };

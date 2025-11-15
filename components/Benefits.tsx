@@ -29,32 +29,41 @@ const Benefits = () => {
     const benefits = translations.benefits;
 
     return (
-        <section id="benefits" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
+        <section id="benefits" className="relative scroll-mt-20 py-20 sm:py-28">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="lg:text-center">
-                    <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">{benefits.tag}</h2>
-                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                        {benefits.heading}
-                    </p>
-                    <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-slate-400 lg:mx-auto">
-                        {benefits.description}
-                    </p>
-                </div>
+                <div className="rounded-3xl border border-slate-200/60 bg-white/90 p-10 shadow-[0_25px_60px_rgba(15,23,42,0.12)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_25px_55px_rgba(2,6,23,0.55)] dark:backdrop-blur-3xl transition-all duration-500">
+                    <div className="lg:text-center">
+                        <h2 className="text-base font-semibold uppercase tracking-wider text-teal-600">
+                            {benefits.tag}
+                        </h2>
+                        <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                            {benefits.heading}
+                        </p>
+                        <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-500 dark:text-slate-400">
+                            {benefits.description}
+                        </p>
+                    </div>
 
-                <div className="mt-12">
-                    <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div className="mt-12 grid gap-10 md:grid-cols-2">
                         {benefits.items.map((benefit, index) => (
-                            <div key={benefit.name} className="relative">
-                                <dt>
-                                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
-                                        {benefitIcons[index]}
-                                    </div>
-                                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-white">{benefit.name}</p>
-                                </dt>
-                                <dd className="mt-2 ml-16 text-base text-gray-500 dark:text-slate-400">{benefit.description}</dd>
+                            <div
+                                key={benefit.name}
+                                className="flex gap-5 rounded-2xl border border-slate-100 bg-white/90 p-6 shadow-sm transition hover:border-slate-300 hover:shadow-[0_25px_35px_rgba(15,23,42,0.2)] dark:border-slate-800 dark:bg-white/5 dark:text-slate-200 dark:shadow-[0_25px_35px_rgba(2,6,23,0.55)] dark:hover:border-slate-600"
+                            >
+                                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-700 text-white shadow-lg">
+                                    {benefitIcons[index]}
+                                </div>
+                                <div>
+                                    <p className="text-lg font-semibold text-slate-900 dark:text-white">
+                                        {benefit.name}
+                                    </p>
+                                    <p className="mt-2 text-base text-slate-600 dark:text-slate-300">
+                                        {benefit.description}
+                                    </p>
+                                </div>
                             </div>
                         ))}
-                    </dl>
+                    </div>
                 </div>
             </div>
         </section>

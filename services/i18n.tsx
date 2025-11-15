@@ -14,7 +14,7 @@ const translationData = {
             themeToggleAria: 'Cambiar entre modo claro y oscuro',
             languageToggleAria: 'Cambiar idioma',
             languageLabels: { es: 'ES', en: 'EN' },
-            askNodai: 'Consultar a NodAI',
+            askNodai: 'Consultar a NODAI',
         },
         hero: {
             title: 'Impulsamos tu negocio con inteligencia.',
@@ -55,10 +55,10 @@ const translationData = {
             title: 'Quiénes somos',
             paragraphs: [
                 'Somos Ingenieros en Sistemas de Información especializados en Inteligencia Artificial, apasionados por transformar desafíos en oportunidades de crecimiento.',
-                'En Nodai, no solo construimos software; creamos alianzas estratégicas. Nos sumergimos en la visión de nuestros clientes para desarrollar soluciones personalizadas que no solo cumplen, sino que superan las expectativas. Brindamos nuestros servicios para crear soluciones de valor que aprovechan el poder de la Inteligencia Artificial.'
+                'En NODAI, no solo construimos software; creamos alianzas estratégicas. Nos sumergimos en la visión de nuestros clientes para desarrollar soluciones personalizadas que no solo cumplen, sino que superan las expectativas. Brindamos nuestros servicios para crear soluciones de valor que aprovechan el poder de la Inteligencia Artificial.'
             ],
             highlight: 'Combinamos estrategia, diseño y desarrollo para llevar tu negocio al siguiente nivel.',
-            imageAlt: 'Equipo de Nodai trabajando',
+            imageAlt: 'Equipo de NODAI trabajando',
         },
         benefits: {
             tag: 'Impacto',
@@ -154,7 +154,7 @@ const translationData = {
             },
         },
         footer: {
-            tagline: 'Impulsando la innovación digital.',
+            tagline: 'Impulsamos tu negocio con inteligencia.',
             navigationTitle: 'Navegación',
             legalTitle: 'Legal',
             privacy: 'Privacidad',
@@ -174,7 +174,7 @@ const translationData = {
                 {
                     title: '1. Información que Recopilamos',
                     paragraphs: [
-                        'En Nodai recopilamos información que usted nos proporciona directamente cuando:'
+                        'En NODAI recopilamos información que usted nos proporciona directamente cuando:'
                     ],
                     list: [
                         'Se comunica con nosotros a través de nuestro formulario de contacto',
@@ -250,13 +250,13 @@ const translationData = {
                 {
                     title: '1. Aceptación de los Términos',
                     paragraphs: [
-                        'Al acceder y utilizar el sitio web de Nodai y nuestros servicios, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con algún aspecto de estos términos, no debe utilizar nuestros servicios.'
+                        'Al acceder y utilizar el sitio web de NODAI y nuestros servicios, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con algún aspecto de estos términos, no debe utilizar nuestros servicios.'
                     ],
                 },
                 {
                     title: '2. Descripción de los Servicios',
                     paragraphs: [
-                        'Nodai es una empresa de tecnología formada por 2 ingenieros en sistemas especializados en Inteligencia Artificial. Ofrecemos los siguientes servicios:'
+                        'NODAI es una empresa de tecnología formada por 2 ingenieros en sistemas especializados en Inteligencia Artificial. Ofrecemos los siguientes servicios:'
                     ],
                     list: [
                         'Desarrollo de aplicaciones web y móviles',
@@ -293,7 +293,7 @@ const translationData = {
                     title: '5. Propiedad Intelectual',
                     paragraphs: ['Los derechos de propiedad intelectual se manejan de la siguiente manera:'],
                     list: [
-                        'El contenido de nuestro sitio web es propiedad de Nodai',
+                        'El contenido de nuestro sitio web es propiedad de NODAI',
                         'Los desarrollos personalizados para clientes pertenecen al cliente',
                         'Conservamos los derechos sobre metodologías y herramientas propias',
                         'Respetamos la propiedad intelectual de terceros'
@@ -351,17 +351,15 @@ const translationData = {
             ],
         },
         thinkingMode: {
-            title: 'Consultar a NodAI (Thinking Mode)',
-            description: 'Describe un desafío o meta empresarial compleja. Nuestra IA lo analizará y sugerirá cómo las soluciones de Nodai pueden ayudarte. Impulsado por Gemini 2.5 Pro con un presupuesto de razonamiento extendido para análisis profundo.',
+            title: 'Consultar a NODAI (Thinking Mode)',
+            description: 'Describe un desafío o meta empresarial compleja. Nuestra IA lo analizará y sugerirá cómo las soluciones de NODAI pueden ayudarte. Impulsado por Gemini 2.5 Pro con un presupuesto de razonamiento extendido para análisis profundo.',
             placeholder: `Ej: "Somos una empresa de logística con 50 camiones y queremos optimizar nuestras rutas de entrega para reducir costos de combustible y tiempos de espera..."`,
             buttonIdle: 'Obtener Análisis',
             buttonLoading: 'Analizando...',
-            responseTitle: 'Análisis de Nodai AI:',
+            responseTitle: 'Análisis de NODAI AI:',
             genericError: 'Ocurrió un error inesperado. Intenta nuevamente más tarde.',
         },
         contactDetails: [
-            { label: 'Email', value: 'trivelopers@gmail.com', href: 'mailto:trivelopers@gmail.com', type: 'email' as const },
-            { label: 'Teléfono', value: '+54 9 291 645-2157', href: 'tel:+5492916452157', type: 'phone' as const },
             { label: 'WhatsApp', value: '+54 9 291 645-2157', href: 'https://wa.me/5492916452157', type: 'whatsapp' as const },
         ],
     },
@@ -376,7 +374,7 @@ const translationData = {
             themeToggleAria: 'Toggle between light and dark mode',
             languageToggleAria: 'Switch language',
             languageLabels: { es: 'ES', en: 'EN' },
-            askNodai: 'Ask NodAI',
+            askNodai: 'Ask NODAI',
         },
         hero: {
             title: 'We boost your business with AI',
@@ -418,10 +416,10 @@ const translationData = {
             title: 'Who we are',
             paragraphs: [
                 'We are Systems Engineers specialized in Artificial Intelligence, passionate about turning challenges into growth opportunities.',
-                'At Nodai, we do more than build software; we create strategic partnerships. We dive into our clients’ vision to deliver tailored solutions that not only meet expectations but exceed them. We deliver services that harness the power of Artificial Intelligence to create real value.'
+                'At NODAI, we do more than build software; we create strategic partnerships. We dive into our clients’ vision to deliver tailored solutions that not only meet expectations but exceed them. We deliver services that harness the power of Artificial Intelligence to create real value.'
             ],
             highlight: 'We blend strategy, design, and development to take your business to the next level.',
-            imageAlt: 'Nodai team working together',
+            imageAlt: 'NODAI team working together',
         },
         benefits: {
             tag: 'Impact',
@@ -537,7 +535,7 @@ const translationData = {
                 {
                     title: '1. Information We Collect',
                     paragraphs: [
-                        'At Nodai we collect information that you provide directly when you:'
+                        'At NODAI we collect information that you provide directly when you:'
                     ],
                     list: [
                         'Reach out through our contact form',
@@ -613,13 +611,13 @@ const translationData = {
                 {
                     title: '1. Acceptance of Terms',
                     paragraphs: [
-                        'By accessing and using Nodai’s website and services, you agree to be bound by these Terms & Conditions. If you disagree with any part of these terms, you should not use our services.'
+                        'By accessing and using NODAI’s website and services, you agree to be bound by these Terms & Conditions. If you disagree with any part of these terms, you should not use our services.'
                     ],
                 },
                 {
                     title: '2. Description of Services',
                     paragraphs: [
-                        'Nodai is a technology company founded by two systems engineers specialized in Artificial Intelligence. We offer the following services:'
+                        'NODAI is a technology company founded by two systems engineers specialized in Artificial Intelligence. We offer the following services:'
                     ],
                     list: [
                         'Web and mobile application development',
@@ -656,7 +654,7 @@ const translationData = {
                     title: '5. Intellectual Property',
                     paragraphs: ['Intellectual property rights are managed as follows:'],
                     list: [
-                        'The content on our website is owned by Nodai',
+                        'The content on our website is owned by NODAI',
                         'Custom developments for clients belong to the client',
                         'We retain rights over our own methodologies and tools',
                         'We respect third-party intellectual property'
@@ -714,17 +712,15 @@ const translationData = {
             ],
         },
         thinkingMode: {
-            title: 'Ask NodAI (Thinking Mode)',
-            description: 'Describe a complex business challenge or goal. Our AI will analyze it and suggest how Nodai’s solutions can help. Powered by Gemini 2.5 Pro with an extended thinking budget for deep analysis.',
+            title: 'Ask NODAI (Thinking Mode)',
+            description: 'Describe a complex business challenge or goal. Our AI will analyze it and suggest how NODAI’s solutions can help. Powered by Gemini 2.5 Pro with an extended thinking budget for deep analysis.',
             placeholder: `E.g. "We run a logistics company with 50 trucks and want to optimize delivery routes to cut fuel costs and waiting times..."`,
             buttonIdle: 'Get analysis',
             buttonLoading: 'Analyzing...',
-            responseTitle: 'Nodai AI analysis:',
+            responseTitle: 'NODAI AI analysis:',
             genericError: 'An unexpected error occurred. Please try again later.',
         },
         contactDetails: [
-            { label: 'Email', value: 'trivelopers@gmail.com', href: 'mailto:trivelopers@gmail.com', type: 'email' as const },
-            { label: 'Phone', value: '+54 9 291 645-2157', href: 'tel:+5492916452157', type: 'phone' as const },
             { label: 'WhatsApp', value: '+54 9 291 645-2157', href: 'https://wa.me/5492916452157', type: 'whatsapp' as const },
         ],
     },

@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-gradient-to-tr from-emerald-300/30 to-violet-300/10 dark:from-emerald-500/20 dark:to-rose-500/0 blur-3xl" />
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <p className="text-xs font-semibold tracking-[0.3em] uppercase text-slate-500 dark:text-slate-300">
-                    NodAI
+                    NODAI
                 </p>
                 <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                     <span className="bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-blue-400">
@@ -44,7 +44,7 @@ const Hero = () => {
                 <div className="mt-12 lg:mt-16">
                     <a
                         href="#contact"
-                        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-slate-900 to-slate-700 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-slate-900/30 transition duration-300 ease-out hover:-translate-y-1 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:bg-white dark:text-slate-900 dark:shadow-white/30 dark:hover:bg-slate-100"
+                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 px-8 py-3 text-base font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 transition duration-300 ease-out hover:-translate-y-1 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 dark:from-emerald-500 dark:via-cyan-400 dark:to-sky-500 dark:text-white dark:shadow-emerald-500/60"
                     >
                         {cta}
                     </a>

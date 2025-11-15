@@ -28,86 +28,97 @@ const Footer = () => {
     } as const;
 
     return (
-        <footer className="bg-slate-100 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-                    <div className="space-y-8 xl:col-span-1">
-                        <img
-                            src="/images/nodai-negro.png"
-                            alt="Nodai logo light"
-                            className="block h-8 w-auto dark:hidden"
-                        />
-                        <img
-                            src="/images/nodai-blanco.png"
-                            alt="Nodai logo dark"
-                            className="hidden h-8 w-auto dark:block"
-                        />
-                        <p className="text-slate-500 dark:text-slate-400 text-base">
-                            {translations.footer.tagline}
-                        </p>
-                    </div>
-                    <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">{translations.footer.navigationTitle}</h3>
-                                <ul className="mt-4 space-y-4">
-                                    {quickLinks.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href} className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="mt-12 md:mt-0">
-                                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">{translations.footer.legalTitle}</h3>
-                                <ul className="mt-4 space-y-4">
-                                    <li>
-                                        <button
-                                            onClick={() => openModal('privacy')}
-                                            className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                                        >
-                                            {translations.footer.privacy}
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button
-                                            onClick={() => openModal('terms')}
-                                            className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                                        >
-                                            {translations.footer.terms}
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+        <footer className="relative scroll-mt-20 border-t border-slate-200/70 bg-transparent dark:border-slate-700/70">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="rounded-3xl border border-slate-200/60 bg-white/80 p-10 shadow-[0_25px_60px_rgba(15,23,42,0.15)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_70px_rgba(2,6,23,0.5)] dark:backdrop-blur-3xl transition-all duration-500">
+                    <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+                        <div className="space-y-6 xl:col-span-1">
+                            <img
+                                src="/images/nodai-negro.png"
+                                alt="NODAI logo light"
+                                className="block h-8 w-auto dark:hidden"
+                            />
+                            <img
+                                src="/images/nodai-blanco.png"
+                                alt="NODAI logo dark"
+                                className="hidden h-8 w-auto dark:block"
+                            />
+                            <p className="text-slate-500 dark:text-slate-400 text-base">
+                                {translations.footer.tagline}
+                            </p>
                         </div>
-                        <div className="md:grid md:grid-cols-1 md:gap-8">
-                            <div>
-                                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">{translations.footer.contactTitle}</h3>
-                                <ul className="mt-4 space-y-4">
-                                    {translations.contactDetails.map((detail) => (
-                                        <li key={detail.type}>
-                                            <a
-                                                href={detail.href}
-                                                className={`inline-flex items-center text-base ${detail.type === 'whatsapp' ? 'text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'}`}
-                                                target={detail.type === 'whatsapp' ? '_blank' : undefined}
-                                                rel={detail.type === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                        <div className="mt-10 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                            <div className="md:grid md:grid-cols-2 md:gap-8">
+                                <div>
+                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                        {translations.footer.navigationTitle}
+                                    </h3>
+                                    <ul className="mt-4 space-y-4">
+                                        {quickLinks.map((item) => (
+                                            <li key={item.name}>
+                                                <a
+                                                    href={item.href}
+                                                    className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="mt-10 md:mt-0">
+                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                        {translations.footer.legalTitle}
+                                    </h3>
+                                    <ul className="mt-4 space-y-4">
+                                        <li>
+                                            <button
+                                                onClick={() => openModal('privacy')}
+                                                className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                                             >
-                                                {detail.type === 'whatsapp' && contactIcons.whatsapp}
-                                                <span>
-                                                    <span className="font-medium">{detail.label}:</span> {detail.value}
-                                                </span>
-                                            </a>
+                                                {translations.footer.privacy}
+                                            </button>
                                         </li>
-                                    ))}
-                                </ul>
+                                        <li>
+                                            <button
+                                                onClick={() => openModal('terms')}
+                                                className="text-base text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                                            >
+                                                {translations.footer.terms}
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="md:grid md:grid-cols-1 md:gap-8">
+                                <div>
+                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                        {translations.footer.contactTitle}
+                                    </h3>
+                                    <ul className="mt-4 space-y-4">
+                                        {translations.contactDetails.map((detail) => (
+                                            <li key={detail.type}>
+                                        <a
+                                            href={detail.href}
+                                            className={`inline-flex items-center text-base ${detail.type === 'whatsapp' ? 'text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'}`}
+                                            target={detail.type === 'whatsapp' ? '_blank' : undefined}
+                                            rel={detail.type === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                                        >
+                                            {detail.type === 'whatsapp' && contactIcons.whatsapp}
+                                            <span className="font-medium">
+                                                {detail.type === 'whatsapp' ? detail.value : `${detail.label}: ${detail.value}`}
+                                            </span>
+                                        </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="mt-12 border-t border-slate-200 dark:border-slate-700 pt-8">
-                    <p className="text-base text-slate-400 dark:text-slate-500 xl:text-center">&copy; {new Date().getFullYear()} Nodai. {translations.footer.copyright}</p>
+                    <div className="mt-12 border-t border-slate-200/60 pt-8 text-center">
+                        <p className="text-base text-slate-400 dark:text-slate-500">&copy; {new Date().getFullYear()} NODAI. {translations.footer.copyright}</p>
+                    </div>
                 </div>
             </div>
 
