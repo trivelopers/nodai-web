@@ -15,9 +15,6 @@ const Hero = () => {
             <div className="pointer-events-none absolute -top-16 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gradient-to-br from-emerald-200/70 via-sky-200/30 to-purple-200/0 dark:from-teal-500/25 dark:via-cyan-500/10 dark:to-transparent blur-3xl" />
             <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-gradient-to-tr from-emerald-300/30 to-violet-300/10 dark:from-emerald-500/20 dark:to-rose-500/0 blur-3xl" />
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p className="text-xs font-semibold tracking-[0.3em] uppercase text-slate-500 dark:text-slate-300">
-                    NODAI
-                </p>
                 <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                     <span className="bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text text-transparent dark:from-cyan-400 dark:to-blue-400">
                         {title}
