@@ -17,7 +17,7 @@ const translationData = {
             askNodai: 'Consultar a NodAI',
         },
         hero: {
-            title: 'Impulsamos tu negocio con IA',
+            title: 'Impulsamos tu negocio con inteligencia.',
             description: 'Desarrollamos soluciones digitales que automatizan, integran y permiten escalar tu empresa.',
             cta: 'Agendá una demo',
         },
