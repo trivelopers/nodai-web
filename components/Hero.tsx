@@ -44,7 +44,7 @@ const Hero = () => {
                 <div className="mt-12 lg:mt-16">
                     <a
                         href="#contact"
-                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400 px-8 py-3 text-base font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 transition duration-300 ease-out hover:-translate-y-1 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 dark:from-emerald-500 dark:via-cyan-400 dark:to-sky-500 dark:text-white dark:shadow-emerald-500/60"
+                        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-emerald-500/40 transition duration-300 ease-out hover:-translate-y-1 hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 dark:from-emerald-400 dark:to-emerald-500"
                     >
                         {cta}
                     </a>
