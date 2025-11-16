@@ -18,7 +18,7 @@ const translationData = {
         },
         hero: {
             title: 'Impulsamos tu negocio con inteligencia.',
-            description: 'Desarrollamos soluciones digitales que automatizan, integran y permiten escalar tu empresa.',
+            description: 'Desarrollamos soluciones que conectan tu empresa con el mundo.',
             cta: 'Agendá una demo',
         },
         services: {
@@ -377,8 +377,8 @@ const translationData = {
             askNodai: 'Ask NODAI',
         },
         hero: {
-            title: 'We boost your business with AI',
-            description: 'We build digital solutions that automate, integrate, and scale your company.',
+            title: 'We boost your business with Inteligence.',
+            description: 'We develop solutions that connect your business with the world.',
             cta: 'Book a demo',
         },
         services: {
