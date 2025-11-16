@@ -377,7 +377,7 @@ const translationData = {
             askNodai: 'Ask NODAI',
         },
         hero: {
-            title: 'We boost your business with Inteligence.',
+            title: 'We boost your business with intelligence.',
             description: 'We develop solutions that connect your business with the world.',
             cta: 'Book a demo',
         },
