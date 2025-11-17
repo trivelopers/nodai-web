@@ -30,7 +30,7 @@ const About = () => {
                             <div className="overflow-hidden rounded-2xl border border-slate-200/40 bg-gradient-to-br from-white to-slate-100 p-1 shadow-lg dark:border-slate-600/40 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-900/70 dark:to-slate-900">
                                 <img
                                     className="h-full w-full rounded-[inherit] object-cover shadow-xl"
-                                    src="https://picsum.photos/800/500?grayscale&random=2"
+                                    src="/images/equipo.jpg"
                                     alt={about.imageAlt}
                                 />
                             </div>
