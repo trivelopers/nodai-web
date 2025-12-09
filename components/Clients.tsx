@@ -27,8 +27,8 @@ interface ClientCardProps {
 }
 
 const ClientCard: React.FC<ClientCardProps> = ({ client, visitWebsiteLabel, logoAlt }) => (
-    <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 transition-all duration-300 hover:shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700">
-        <div className="flex items-center justify-center h-16 mb-6">
+    <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 sm:p-8 transition-all duration-300 hover:shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700">
+        <div className="flex items-center justify-center h-16 mb-4 sm:mb-6">
             {client.name === 'COEM' ? (
                 <CodemLogo />
             ) : client.logo ? (
@@ -45,13 +45,13 @@ const ClientCard: React.FC<ClientCardProps> = ({ client, visitWebsiteLabel, logo
                 </div>
             )}
         </div>
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 text-center">
+        <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 text-center">
             {client.name}
         </h3>
         <p className="text-sm text-teal-600 dark:text-teal-400 font-medium mb-3 text-center">
             {client.industry}
         </p>
-        <p className="text-slate-600 dark:text-slate-300 text-center leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 text-center leading-relaxed">
             {client.description}
         </p>
         {client.website && (
@@ -77,18 +77,18 @@ const Clients = () => {
     const logoAlt = (name: string) => (language === 'es' ? `Logo de ${name}` : `${name} logo`);
 
     return (
-        <section id="clients" className="bg-white dark:bg-slate-900 py-20 sm:py-28 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+        <section id="clients" className="bg-white dark:bg-slate-900 py-20 sm:py-28 lg:py-32 transition-colors duration-300">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                <div className="text-center mb-10 sm:mb-12">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
                         {section.title}
                     </h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-300">
+                    <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300">
                         {section.description.join(' ')}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 max-w-6xl mx-auto">
                     {clients.map((client, index) => (
                         <ClientCard key={index} client={client} visitWebsiteLabel={section.visitWebsite} logoAlt={logoAlt} />
                     ))}

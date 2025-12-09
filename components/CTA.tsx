@@ -9,15 +9,15 @@ const CTA = () => {
     return (
         <section
             id="contact"
-            className="relative scroll-mt-20 py-20 sm:py-28"
+            className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32"
         >
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="rounded-3xl border border-slate-200/60 bg-white/80 p-10 shadow-[0_35px_80px_rgba(15,23,42,0.2)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_80px_rgba(2,6,23,0.6)] dark:backdrop-blur-3xl transition-all duration-500">
+            <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+                <div className="rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/80 p-5 sm:p-10 shadow-[0_35px_80px_rgba(15,23,42,0.2)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_80px_rgba(2,6,23,0.6)] dark:backdrop-blur-3xl transition-all duration-500">
                     <div className="text-center">
-                        <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+                        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
                             <span className="block">{cta.heading}</span>
                         </h2>
-                        <p className="mt-4 text-lg leading-6 text-slate-600 dark:text-slate-300">
+                        <p className="mt-4 text-base sm:text-lg leading-6 text-slate-600 dark:text-slate-300">
                             {cta.description}
                         </p>
                     </div>

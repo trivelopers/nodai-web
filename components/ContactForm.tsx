@@ -67,12 +67,12 @@ ${formData.message}
     };
 
     return (
-        <div className="max-w-3xl mx-auto mt-12 rounded-3xl border border-slate-200/60 bg-white/90 px-4 py-12 shadow-[0_35px_70px_rgba(15,23,42,0.2)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-950/80 dark:shadow-[0_35px_75px_rgba(2,6,23,0.6)] dark:backdrop-blur-3xl transition">
-            <div className="text-center mb-10">
-                <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+        <div className="max-w-3xl mx-auto mt-8 sm:mt-12 mx-3 sm:mx-auto rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/90 px-4 sm:px-8 py-8 sm:py-12 shadow-[0_35px_70px_rgba(15,23,42,0.2)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-950/80 dark:shadow-[0_35px_75px_rgba(2,6,23,0.6)] dark:backdrop-blur-3xl transition">
+            <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
                     {contactForm.title}
                 </h2>
-                <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
+                <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
                     {contactForm.description}
                 </p>
             </div>

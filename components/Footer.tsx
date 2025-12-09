@@ -29,8 +29,8 @@ const Footer = () => {
 
     return (
         <footer className="relative scroll-mt-20 border-t border-slate-200/70 bg-transparent dark:border-slate-700/70">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="rounded-3xl border border-slate-200/60 bg-white/80 p-10 shadow-[0_25px_60px_rgba(15,23,42,0.15)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_70px_rgba(2,6,23,0.5)] dark:backdrop-blur-3xl transition-all duration-500">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-10 sm:py-16">
+                <div className="rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/80 p-5 sm:p-10 shadow-[0_25px_60px_rgba(15,23,42,0.15)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_70px_rgba(2,6,23,0.5)] dark:backdrop-blur-3xl transition-all duration-500">
                     <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                         <div className="space-y-6 xl:col-span-1">
                             <img
@@ -47,7 +47,7 @@ const Footer = () => {
                                 {translations.footer.tagline}
                             </p>
                         </div>
-                        <div className="mt-10 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-6 sm:gap-8 xl:mt-0 xl:col-span-2">
                             <div className="md:grid md:grid-cols-2 md:gap-8">
                                 <div>
                                     <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
