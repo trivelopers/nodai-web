@@ -112,12 +112,13 @@ select { font: inherit; }
 
 .logo-marquee__item {
     display: flex;
-    height: 88px;
-    width: 184px;
+    position: relative;
+    height: 116px;
+    width: 216px;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    padding: 18px;
+    padding: 15px 18px 31px;
     border: 1px solid rgba(148, 163, 184, 0.26);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.96);
@@ -135,10 +136,27 @@ select { font: inherit; }
 .logo-marquee__image {
     display: block;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 10px);
     object-fit: contain;
     border-radius: 8px;
 }
+
+.logo-marquee__label {
+    position: absolute;
+    right: 13px;
+    bottom: 9px;
+    left: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #334155;
+    font-size: .67rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    line-height: 1;
+}
+
+.logo-marquee__label b { color: #0f9f83; font-size: .85rem; }
 
 /* Landing corta: composición y lenguaje visual del prototipo elegido. */
 .short-wrap { width:min(1180px,calc(100% - 48px)); margin:auto; }

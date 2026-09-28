@@ -231,7 +231,8 @@ const translationData = {
                     tag: 'Transcripción IA',
                     solution: 'Transcriptor por IA de informes médicos',
                     description: 'Herramienta con inteligencia artificial para la transcripción rápida y estructuración precisa de informes y dictados médicos de estudios radiológicos.',
-                    logo: '/images/clients/tomocom.png'
+                    logo: '/images/clients/tomocom.png',
+                    website: 'https://web.facebook.com/institutorcs/?locale=es_LA&_rdc=1&_rdr#'
                 },
                 {
                     name: 'Verde Manzana',
@@ -732,7 +733,8 @@ const translationData = {
                     tag: 'AI Transcription',
                     solution: 'AI-powered medical report transcription system',
                     description: 'Specialized artificial intelligence tool for accurate, rapid transcription and structured reporting of radiological dictations and clinical studies.',
-                    logo: '/images/clients/tomocom.png'
+                    logo: '/images/clients/tomocom.png',
+                    website: 'https://web.facebook.com/institutorcs/?locale=es_LA&_rdc=1&_rdr#'
                 },
                 {
                     name: 'Verde Manzana',

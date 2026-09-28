@@ -31,10 +31,11 @@ const Clients: React.FC = () => {
                         {logos.map((client, index) => (
                             <a
                                 key={`${client.name}-${index}`}
-                                href={index < clients.length ? `#case/${slugify(client.name)}` : undefined}
+                                href={client.website ?? `#case/${slugify(client.name)}`}
                                 className="logo-marquee__item"
                                 aria-hidden={index >= clients.length}
-                                aria-label={index < clients.length ? (language === 'es' ? `Ver caso real de ${client.name}` : `View ${client.name} case study`) : undefined}
+                                tabIndex={index >= clients.length ? -1 : undefined}
+                                aria-label={index < clients.length ? (language === 'es' ? `Visitar ${client.name}` : `Visit ${client.name}`) : undefined}
                             >
                                 {client.logo ? (
                                     <img
@@ -45,6 +46,7 @@ const Clients: React.FC = () => {
                                 ) : (
                                     <span className="logo-marquee__wordmark">{client.name}</span>
                                 )}
+                                <span className="logo-marquee__label">{client.name}<b aria-hidden="true">↗</b></span>
                             </a>
                         ))}
                     </div>
