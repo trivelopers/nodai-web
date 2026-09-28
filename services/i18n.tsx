@@ -8,7 +8,7 @@ const translationData = {
             navLinks: [
                 { name: 'Servicios', href: '#services' },
                 { name: 'Quiénes somos', href: '#about' },
-                /*{ name: 'Clientes', href: '#clients' },*/
+                { name: 'Clientes', href: '#clients' },
                 { name: 'Contacto', href: '#contact' }
             ],
             themeToggleAria: 'Cambiar entre modo claro y oscuro',
@@ -18,12 +18,117 @@ const translationData = {
         },
         hero: {
             title: 'Impulsamos tu negocio con inteligencia.',
-            description: 'Desarrollamos soluciones que conectan tu empresa con el mundo.',
+            description: 'Desarrollamos soluciones tecnológicas que optimizan procesos y hacen crecer tu negocio.',
             cta: 'Agendá una demo',
+            carousel: {
+                statusOnline: 'IA ACTIVA · EN LÍNEA',
+                tabs: {
+                    medical: 'Turnos Médicos',
+                    realEstate: 'Inmobiliaria',
+                    solutions: 'Ecosistema',
+                },
+                medical: {
+                    tag: 'ASISTENTE MÉDICO',
+                    patientName: 'Paciente',
+                    userMessage1: 'Hola! Necesito un turno con el Dr. Martínez (Traumatología) para esta semana si es posible 🙏',
+                    botMessage1: '¡Hola! Con gusto te ayudo. El Dr. Martínez atiende en Sede Central. Tengo estos turnos disponibles:',
+                    slots: ['Jue 14 · 16:30 hs', 'Vie 15 · 10:15 hs', 'Vie 15 · 18:00 hs'],
+                    userMessage2: 'El viernes 15 a las 10:15 me queda perfecto.',
+                    botMessage2: '¡Turno confirmado con éxito! 🎉',
+                    appointmentCard: {
+                        doctor: 'Dr. Roberto Martínez',
+                        specialty: 'Traumatología y Ortopedia',
+                        date: 'Viernes 15 de Noviembre · 10:15 hs',
+                        location: 'Sede Central · Consultorio 4',
+                        badge: 'Turno confirmado #TR-8492',
+                        calendarNotice: 'Sincronizado con Google Calendar & WhatsApp',
+                    },
+                    botMessage3: 'Te enviamos la confirmación y recordatorio a tu WhatsApp. ¿Precisás algo más?',
+                },
+                realEstate: {
+                    tag: 'ASISTENTE INMOBILIARIO',
+                    clientName: 'Cliente',
+                    userMessage1: 'Buenas tardes! Busco departamento en alquiler 2 ambientes en Palermo o Colegiales, hasta $650 USD con balcón.',
+                    botMessage1: '¡Hola! Encontré 2 opciones activas que coinciden exactamente con tu búsqueda:',
+                    properties: [
+                        {
+                            title: 'Humboldt al 1900 · Palermo Hollywood',
+                            specs: '2 amb · 52 m² · Balcón terraza · Cochera fija',
+                            price: '$600 USD/mes',
+                            badge: 'Disponible ya',
+                        },
+                        {
+                            title: 'Conde y Lacroze · Colegiales',
+                            specs: '2 amb · 56 m² · Balcón al frente · Amenities & Pileta',
+                            price: '$640 USD/mes',
+                            badge: 'Destacado',
+                        },
+                    ],
+                    userMessage2: 'Me interesa mucho el de Humboldt. ¿Podríamos coordinar una visita mañana a las 17 hs?',
+                    botMessage2: '¡Excelente! Notifiqué al asesor comercial y reservé tu visita para mañana a las 17:00 hs. Te adjunto la ficha técnica completa en PDF 📄✨',
+                    viewDetails: 'Ver detalles →',
+                    visitScheduledBadge: 'VISITA AGENDADA',
+                },
+                solutions: {
+                    tag: 'SISTEMAS CONECTADOS',
+                    title: 'Soluciones Inteligentes en Operación',
+                    items: [
+                        {
+                            title: 'Turnero & WhatsApp para Consultorios',
+                            desc: 'Gestión automática de agendas médicas y recordatorios 24/7 sin intervención manual.',
+                            metric: '99.9% efectividad',
+                        },
+                        {
+                            title: 'Asistentes de Búsqueda y Atención con IA',
+                            desc: 'Calificación de consultas, envío de catálogos o propiedades y coordinación de citas.',
+                            metric: 'Respuestas en < 3s',
+                        },
+                        {
+                            title: 'Software & Automatizaciones a Medida',
+                            desc: 'Integración fluida con bases de datos, ERPs, CRMs y pasarelas de pago.',
+                            metric: 'Interoperabilidad 100%',
+                        },
+                    ],
+                    badge: 'NODAI ENGINE · TIEMPO REAL',
+                    footerNote: 'Tecnología modular lista para conectar con tu software de gestión actual.',
+                },
+                prevSlide: 'Anterior',
+                nextSlide: 'Siguiente',
+            },
         },
         services: {
             title: 'Nuestras soluciones',
-            description: 'Tecnología de punta para resolver los desafíos de hoy.',
+            subtitle: 'Desarrollamos sistemas a medida e implementamos soluciones tecnológicas para resolver desafíos reales y potenciar tu empresa.',
+            customSoftware: {
+                badge: 'Solución a medida',
+                title: 'Software a medida de tu negocio',
+                subtitle: 'Creamos e integramos sistemas adaptados a los procesos únicos de tu empresa.',
+                description: 'Diseñamos y desarrollamos soluciones tecnológicas a medida de las necesidades específicas de cada negocio. Ya sea creando plataformas digitales desde cero o integrando nuevos sistemas con tu infraestructura actual (ERP, CRM, WhatsApp, facturación y APIs), construimos herramientas confiables, escalables y orientadas a resultados.',
+                features: [
+                    {
+                        title: 'Desarrollo desde cero',
+                        description: 'Plataformas web, paneles de administración, portales y aplicaciones diseñadas exactamente para tu flujo de trabajo.',
+                    },
+                    {
+                        title: 'Integración con tus sistemas',
+                        description: 'Conectamos tus sistemas actuales (CRM, ERP, bases de datos, pasarelas de pago y APIs) para centralizar la operación sin duplicar esfuerzos.',
+                    },
+                    {
+                        title: 'Escalabilidad & IA',
+                        description: 'Arquitecturas robustas y modernas que crecen con tu empresa, con la posibilidad de incorporar inteligencia artificial donde genera impacto real.',
+                    },
+                ],
+                cta: 'Consultar por tu proyecto a medida',
+                architectureLabel: 'ARQUITECTURA CONECTADA',
+                diagram: {
+                    business: 'Tu Negocio',
+                    customCore: 'Software a Medida NODAI',
+                    status: 'Operativo & Integrado',
+                    integrations: ['ERP / CRM', 'WhatsApp & Clientes', 'APIs & Pasarelas', 'Bases de Datos'],
+                },
+            },
+            specializedTitle: 'Herramientas listas para adaptar',
+            specializedSubtitle: 'Sistemas y productos probados, listos para implementarse o adaptarse a tu empresa.',
             items: [
                 {
                     name: 'Inteligencia Artificial',
@@ -38,24 +143,32 @@ const translationData = {
                     description: 'Creamos las herramientas que tu negocio necesita. Soluciones robustas, escalables y perfectamente integradas.',
                 },
                 {
-                    name: 'Turnero para profesionales médicos',
-                    description: 'Desarrollamos sistemas de gestión de turnos médicos que permiten a los pacientes reservar online y a los profesionales administrar sus agendas con facilidad.',
+                    name: 'Turnero web para consultorios',
+                    description: 'Sistema de gestión de turnos online para pacientes y profesionales, integrado con WhatsApp para reservar, consultar y confirmar citas.',
                 },
                 {
-                    name: 'Asistentes virtuales con IA conectados a WhatsApp',
-                    description: 'Creamos asistentes conversacionales inteligentes que automatizan atención al cliente, reservas y consultas, totalmente integrados con la API oficial de WhatsApp.',
-                    },
-                    {
-        name: 'Gestión comercial y catálogo online',
-        description: 'Construimos plataformas integrales de ventas y stock que permiten administrar productos, pedidos y envíos, con catálogos públicos y automatización de procesos entre múltiples empresas.',
-    }
+                    name: 'Chatbots con IA para WhatsApp',
+                    description: 'Asistentes conversacionales para respuestas automáticas, gestión de consultas y derivación inteligente al sector correspondiente.',
+                },
+                {
+                    name: 'E-commerce y catálogo online',
+                    description: 'Tiendas online con catálogo, pedidos, pagos y herramientas de gestión comercial adaptadas a cada negocio.',
+                },
+                {
+                    name: 'Renovación de medicación crónica',
+                    description: 'Plataformas para solicitar y gestionar recetas de medicación crónica de forma simple, segura y ordenada.',
+                },
+                {
+                    name: 'Transcripción médica con IA',
+                    description: 'Sistemas que convierten dictados médicos en informes estructurados para agilizar el trabajo profesional.',
+                }
             ],
         },
         about: {
             title: 'Quiénes somos',
             paragraphs: [
                 'Somos Ingenieros en Sistemas de Información especializados en Inteligencia Artificial, apasionados por transformar desafíos en oportunidades de crecimiento.',
-                'En NODAI, no solo construimos software; creamos alianzas estratégicas. Nos sumergimos en la visión de nuestros clientes para desarrollar soluciones personalizadas que no solo cumplen, sino que superan las expectativas. Brindamos nuestros servicios para crear soluciones de valor que aprovechan el poder de la Inteligencia Artificial.'
+                'En NODAI, desarrollamos software trabajando en estrecha colaboración con cada cliente. Nos involucramos en su visión y sus objetivos para crear soluciones personalizadas que aporten valor real, incorporando Inteligencia Artificial cuando puede mejorar sus procesos y resultados.'
             ],
             highlight: 'Combinamos estrategia, diseño y desarrollo para llevar tu negocio al siguiente nivel.',
             imageAlt: 'Equipo de NODAI trabajando',
@@ -84,36 +197,64 @@ const translationData = {
             ],
         },
         clients: {
-            title: 'Clientes y empresas que confían en nosotros',
+            tag: 'Casos reales',
+            title: 'Clientes que confían en nosotros',
             description: [
-                'Construimos relaciones duraderas basadas en resultados y confianza mutua,',
-                'desarrollando soluciones personalizadas para cada sector.'
+                'Construimos soluciones tecnológicas que resuelven problemas',
+                'concretos de negocio, optimizan la atención y automatizan procesos clave.'
             ],
             items: [
                 {
-                    name: 'SyS Inmobiliaria',
-                    industry: 'Sector Inmobiliario',
-                    description: 'Inmobiliaria con más de 27 años de trayectoria en el mercado, especializada en propiedades rurales y urbanas en la región de Buenos Aires. Brindamos soluciones tecnológicas para optimizar la gestión de propiedades y mejorar la experiencia del cliente.',
-                    logo: 'https://static.tokkobroker.com/tfw_images/12347_S%26S%20Inmobiliaria/Logo_azul_sin_fondo.png',
-                    website: 'https://www.sysinmobiliaria.com.ar'
-                },
-                {
                     name: 'COEM',
+                    subtitle: 'Consultorios de Especialidades Médicas',
                     industry: 'Sector Salud',
-                    description: 'Consultorios de Especialidades Médicas ubicado en Coronel Suárez, Buenos Aires. Desarrollamos sistemas de gestión médica y soluciones digitales para mejorar la atención al paciente y optimizar los procesos administrativos.',
-                    website: 'https://www.coem.ar'
+                    tag: 'Turnos & WhatsApp',
+                    solution: 'Turnero web y chatbot por WhatsApp para gestión de turnos',
+                    description: 'Sistema integral de turnos con plataforma web autogestionable y chatbot por WhatsApp, facilitando a los pacientes agendar, consultar y confirmar citas sin demoras.',
+                    logo: '/images/clients/coem.png',
+                    website: 'https://coem.saturnos.online'
                 },
                 {
-                    name: 'Fragma Bahía',
-                    industry: 'Tecnología',
-                    description: 'Empresa de tecnología con 5 años en el rubro, especializada en la venta de cables, adaptadores y artículos electrónicos de uso general. Brindamos soluciones tecnológicas para optimizar sus operaciones comerciales y mejorar la experiencia del cliente.',
-                    logo: '/images/fragma-logo.jpg',
-                    website: 'https://fragma.com.ar'
+                    name: 'Mi Receta Online',
+                    subtitle: 'Dr. Mariano Seín',
+                    industry: 'Salud Digital',
+                    tag: 'Gestión Médica',
+                    solution: 'Sistema para renovación de medicación crónica',
+                    description: 'Plataforma digital dedicada a la solicitud, validación y gestión ágil de recetas para tratamientos crónicos, simplificando la atención médica y reduciendo tiempos administrativos.',
+                    logo: '/images/clients/mi-receta-online.svg',
+                    website: 'https://mireceta.online'
+                },
+                {
+                    name: 'Instituto Radiológico',
+                    subtitle: 'Coronel Suárez',
+                    industry: 'Diagnóstico & IA Médica',
+                    tag: 'Transcripción IA',
+                    solution: 'Transcriptor por IA de informes médicos',
+                    description: 'Herramienta con inteligencia artificial para la transcripción rápida y estructuración precisa de informes y dictados médicos de estudios radiológicos.',
+                    logo: '/images/clients/tomocom.png'
+                },
+                {
+                    name: 'Verde Manzana',
+                    industry: 'Comercio Electrónico',
+                    tag: 'E-commerce',
+                    solution: 'Plataforma de E-commerce y catálogo online',
+                    description: 'Desarrollo de tienda online moderna con catálogo digital interactivo, diseñada para optimizar las ventas digitales, la experiencia de compra y la gestión comercial.',
+                    logo: '/images/clients/verde-manzana.png',
+                    website: 'https://store.verdemanzanamuebles.com.ar'
+                },
+                {
+                    name: 'Sys Inmobiliaria',
+                    industry: 'Sector Inmobiliario',
+                    tag: 'Chatbot con IA',
+                    solution: 'IA chatbots para respuestas automáticas y derivación al sector correspondiente',
+                    description: 'Implementación de chatbots inteligentes para atención 24/7 en canales digitales, respondiendo consultas sobre propiedades y derivando automáticamente los interesados al sector correspondiente.',
+                    logo: '/images/clients/sys-inmobiliaria.png',
+                    website: 'https://www.sysinmobiliaria.com.ar'
                 }
             ],
             visitWebsite: 'Visitar sitio web →',
             badge: '¿Tu empresa podría ser la siguiente?',
-            callToAction: 'Contáctanos para descubrir cómo podemos impulsar tu negocio con tecnología e IA',
+            callToAction: 'Contactanos para descubrir cómo podemos potenciar tu negocio con tecnología e inteligencia artificial.'
         },
         cta: {
             heading: '¿Listo para transformar tu negocio?',
@@ -129,7 +270,7 @@ const translationData = {
             fields: {
                 name: { label: 'Nombre *', placeholder: 'Tu nombre' },
                 email: { label: 'Email *', placeholder: 'tu@email.com' },
-                phone: { label: 'Teléfono', placeholder: '+54 9 291 645-2157' },
+                phone: { label: 'Teléfono', placeholder: '+54 9 2926 41-4331' },
                 company: { label: 'Empresa', placeholder: 'Tu empresa' },
                 message: { label: 'Mensaje *', placeholder: 'Comentanos sobre tu proyecto o consulta...' },
             },
@@ -360,7 +501,7 @@ const translationData = {
             genericError: 'Ocurrió un error inesperado. Intenta nuevamente más tarde.',
         },
         contactDetails: [
-            { label: 'WhatsApp', value: '+54 9 291 645-2157', href: 'https://wa.me/5492916452157', type: 'whatsapp' as const },
+            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: 'https://wa.me/5492926414331', type: 'whatsapp' as const },
         ],
     },
     en: {
@@ -378,12 +519,117 @@ const translationData = {
         },
         hero: {
             title: 'We boost your business with intelligence.',
-            description: 'We develop solutions that connect your business with the world.',
+            description: 'We develop technology solutions that optimize processes and help your business grow.',
             cta: 'Book a demo',
+            carousel: {
+                statusOnline: 'AI ACTIVE · ONLINE',
+                tabs: {
+                    medical: 'Medical Booking',
+                    realEstate: 'Real Estate',
+                    solutions: 'Ecosystem',
+                },
+                medical: {
+                    tag: 'MEDICAL ASSISTANT',
+                    patientName: 'Patient',
+                    userMessage1: 'Hi! I need an appointment with Dr. Martinez (Orthopedics) for this week if possible 🙏',
+                    botMessage1: 'Hello! Happy to help. Dr. Martinez sees patients at Main Clinic. Here are the available slots this week:',
+                    slots: ['Thu 14 · 4:30 PM', 'Fri 15 · 10:15 AM', 'Fri 15 · 6:00 PM'],
+                    userMessage2: 'Friday 15 at 10:15 AM works great for me.',
+                    botMessage2: 'Appointment successfully confirmed! 🎉',
+                    appointmentCard: {
+                        doctor: 'Dr. Roberto Martinez',
+                        specialty: 'Orthopedics & Sports Medicine',
+                        date: 'Friday, Nov 15 · 10:15 AM',
+                        location: 'Main Clinic · Office 4',
+                        badge: 'Confirmed #TR-8492',
+                        calendarNotice: 'Synced with Google Calendar & WhatsApp',
+                    },
+                    botMessage3: 'We sent confirmation and prep notes to your WhatsApp. Need anything else?',
+                },
+                realEstate: {
+                    tag: 'REAL ESTATE ASSISTANT',
+                    clientName: 'Client',
+                    userMessage1: 'Hi! Looking for a 1-bedroom apartment in Palermo or Colegiales, up to $650 USD with balcony.',
+                    botMessage1: 'Hello! I found 2 available properties matching your criteria:',
+                    properties: [
+                        {
+                            title: '1900 Humboldt St · Palermo Hollywood',
+                            specs: '1-bed · 52 m² · Terrace balcony · Dedicated parking',
+                            price: '$600 USD/mo',
+                            badge: 'Available now',
+                        },
+                        {
+                            title: 'Conde & Lacroze · Colegiales',
+                            specs: '1-bed · 56 m² · Front balcony · Pool & Amenities',
+                            price: '$640 USD/mo',
+                            badge: 'Featured',
+                        },
+                    ],
+                    userMessage2: 'The Humboldt one looks great! Could we schedule a viewing tomorrow at 5 PM?',
+                    botMessage2: 'All set! I notified the real estate agent and booked your viewing for tomorrow at 5:00 PM. Attached is the full PDF spec sheet 📄✨',
+                    viewDetails: 'View details →',
+                    visitScheduledBadge: 'VIEWING CONFIRMED',
+                },
+                solutions: {
+                    tag: 'CONNECTED SYSTEMS',
+                    title: 'Intelligent Solutions in Production',
+                    items: [
+                        {
+                            title: 'Medical Scheduling & WhatsApp',
+                            desc: 'Automated 24/7 calendar booking and patient reminders without manual staff overhead.',
+                            metric: '99.9% uptime',
+                        },
+                        {
+                            title: 'AI Conversational Inquiries & Search',
+                            desc: 'Lead qualification, property or catalog sharing, and instant appointment booking.',
+                            metric: '< 3s response',
+                        },
+                        {
+                            title: 'Custom Software & Automation',
+                            desc: 'Seamless integration with databases, ERPs, CRMs, and payment gateways.',
+                            metric: '100% interoperable',
+                        },
+                    ],
+                    badge: 'NODAI ENGINE · REAL-TIME',
+                    footerNote: 'Modular technology ready to integrate with your existing management software.',
+                },
+                prevSlide: 'Previous',
+                nextSlide: 'Next',
+            },
         },
         services: {
             title: 'Our Solutions',
-            description: 'Cutting-edge technology to solve today’s challenges.',
+            subtitle: 'We build custom systems and implement technology solutions designed to solve real challenges and empower your business.',
+            customSoftware: {
+                badge: 'Tailored Solution',
+                title: 'Custom Software for Your Business',
+                subtitle: 'We build and integrate systems designed around your unique business processes.',
+                description: 'We design and develop custom technology solutions tailored to the specific needs of each business. Whether building a new digital platform from scratch or integrating new systems into your existing infrastructure (ERP, CRM, WhatsApp, billing, and APIs), we create reliable, scalable, and results-driven tools.',
+                features: [
+                    {
+                        title: 'Built from Scratch',
+                        description: 'Web platforms, management dashboards, client portals, and apps engineered precisely around your workflow.',
+                    },
+                    {
+                        title: 'System Integration',
+                        description: 'We connect your existing tools (CRM, ERP, databases, payment gateways, and APIs) to unify operations without duplicate effort.',
+                    },
+                    {
+                        title: 'Scalability & AI',
+                        description: 'Robust, modern architectures that scale with your growth, with the ability to embed AI where it drives real value.',
+                    },
+                ],
+                cta: 'Request custom development',
+                architectureLabel: 'CONNECTED ARCHITECTURE',
+                diagram: {
+                    business: 'Your Business',
+                    customCore: 'NODAI Custom Software',
+                    status: 'Live & Integrated',
+                    integrations: ['ERP / CRM', 'WhatsApp & Clients', 'APIs & Gateways', 'Databases'],
+                },
+            },
+            specializedTitle: 'Ready-to-adapt tools',
+            specializedSubtitle: 'Proven systems and products ready to deploy or adapt to your business.',
             items: [
                 {
                     name: 'Artificial Intelligence',
@@ -398,25 +644,32 @@ const translationData = {
                     description: 'We build the tools your business needs. Robust, scalable, and perfectly integrated solutions.',
                 },
                 {
-    name: 'Medical Appointment Scheduling System',
-    description: 'We build online scheduling platforms for healthcare professionals, enabling patients to book appointments and manage their visits easily.',
-},
-{
-    name: 'AI-powered Virtual Assistants for WhatsApp',
-    description: 'We design intelligent conversational assistants that automate customer service, bookings, and queries, fully integrated with the official WhatsApp API.',
-},
-{
-    name: 'Business Management and Online Catalog',
-    description: 'We develop integrated platforms for inventory, sales, and logistics, enabling businesses to manage products, orders, and deliveries with public catalogs and multi-company automation.',
-},
-
+                    name: 'Web Scheduling for Medical Practices',
+                    description: 'Online appointment management for patients and professionals, integrated with WhatsApp to book, review, and confirm visits.',
+                },
+                {
+                    name: 'AI Chatbots for WhatsApp',
+                    description: 'Conversational assistants for automated responses, inquiry management, and intelligent routing to the right department.',
+                },
+                {
+                    name: 'E-commerce and Online Catalogs',
+                    description: 'Online stores with catalogs, ordering, payments, and commercial management tools adapted to each business.',
+                },
+                {
+                    name: 'Chronic Medication Renewals',
+                    description: 'Platforms for requesting and managing chronic medication prescriptions through a simple, secure, and organized flow.',
+                },
+                {
+                    name: 'AI Medical Transcription',
+                    description: 'Systems that turn medical dictation into structured reports to streamline professional workflows.',
+                },
             ],
         },
         about: {
             title: 'Who we are',
             paragraphs: [
-                'We are Systems Engineers specialized in Artificial Intelligence, passionate about turning challenges into growth opportunities.',
-                'At NODAI, we do more than build software; we create strategic partnerships. We dive into our clients’ vision to deliver tailored solutions that not only meet expectations but exceed them. We deliver services that harness the power of Artificial Intelligence to create real value.'
+                'We are Information Systems Engineers specialized in Artificial Intelligence, passionate about transforming challenges into growth opportunities.',
+                'At NODAI, we develop software working in close collaboration with each client. We engage with their vision and goals to create custom solutions that deliver real value, incorporating Artificial Intelligence when it can improve their processes and results.'
             ],
             highlight: 'We blend strategy, design, and development to take your business to the next level.',
             imageAlt: 'NODAI team working together',
@@ -445,36 +698,64 @@ const translationData = {
             ],
         },
         clients: {
-            title: 'Clients and companies that trust us',
+            tag: 'Real Cases',
+            title: 'Clients Who Trust Us',
             description: [
-                'We build long-term relationships based on results and mutual trust,',
-                'designing tailored solutions for every industry.'
+                'We build custom technology and Artificial Intelligence solutions that solve concrete business',
+                'challenges, enhance customer experience, and automate key operational workflows.'
             ],
             items: [
                 {
-                    name: 'SyS Inmobiliaria',
-                    industry: 'Real Estate',
-                    description: 'A real estate agency with more than 27 years in the market, specializing in rural and urban properties across Buenos Aires. We delivered technology solutions to optimize property management and enhance customer experience.',
-                    logo: 'https://static.tokkobroker.com/tfw_images/12347_S%26S%20Inmobiliaria/Logo_azul_sin_fondo.png',
-                    website: 'https://www.sysinmobiliaria.com.ar'
-                },
-                {
                     name: 'COEM',
+                    subtitle: 'Medical Specialty Clinics',
                     industry: 'Healthcare',
-                    description: 'A multi-specialty medical clinic located in Coronel Suárez, Buenos Aires. We developed management systems and digital solutions to improve patient care and streamline administrative processes.',
-                    website: 'https://www.coem.ar'
+                    tag: 'Booking & WhatsApp',
+                    solution: 'Web booking system and WhatsApp chatbot for appointment scheduling',
+                    description: 'Comprehensive appointment scheduling solution featuring a self-service web portal and WhatsApp chatbot, enabling patients to book, confirm, and manage medical visits effortlessly.',
+                    logo: '/images/clients/coem.png',
+                    website: 'https://coem.saturnos.online'
                 },
                 {
-                    name: 'Fragma Bahía',
-                    industry: 'Technology',
-                    description: 'A technology company with 5 years in the industry, specialized in selling cables, adapters, and general-use electronic items. We provide technological solutions to optimize their commercial operations and improve customer experience.',
-                    logo: '/images/fragma-logo.jpg',
-                    website: 'https://fragma.com.ar'
+                    name: 'Mi Receta Online',
+                    subtitle: 'Dr. Mariano Seín',
+                    industry: 'Digital Health',
+                    tag: 'Medical Management',
+                    solution: 'Online system for chronic medication prescription renewals',
+                    description: 'Digital platform streamlining prescription requests and issuance for chronic patient treatments, drastically cutting administrative overhead and wait times.',
+                    logo: '/images/clients/mi-receta-online.svg',
+                    website: 'https://mireceta.online'
+                },
+                {
+                    name: 'Instituto Radiológico',
+                    subtitle: 'Coronel Suárez',
+                    industry: 'Diagnostic Imaging & AI',
+                    tag: 'AI Transcription',
+                    solution: 'AI-powered medical report transcription system',
+                    description: 'Specialized artificial intelligence tool for accurate, rapid transcription and structured reporting of radiological dictations and clinical studies.',
+                    logo: '/images/clients/tomocom.png'
+                },
+                {
+                    name: 'Verde Manzana',
+                    industry: 'E-commerce & Retail',
+                    tag: 'E-commerce',
+                    solution: 'E-commerce platform and online product catalog',
+                    description: 'Modern online storefront and interactive digital catalog built to maximize sales conversions, enhance browsing experience, and streamline order processing.',
+                    logo: '/images/clients/verde-manzana.png',
+                    website: 'https://store.verdemanzanamuebles.com.ar'
+                },
+                {
+                    name: 'Sys Inmobiliaria',
+                    industry: 'Real Estate',
+                    tag: 'AI Chatbot',
+                    solution: 'AI chatbots for automated responses and department routing',
+                    description: 'Deployment of intelligent 24/7 conversational agents on digital channels, answering property inquiries and routing qualified leads directly to the sales team.',
+                    logo: '/images/clients/sys-inmobiliaria.png',
+                    website: 'https://www.sysinmobiliaria.com.ar'
                 }
             ],
             visitWebsite: 'Visit website →',
             badge: 'Could your company be next?',
-            callToAction: 'Contact us to discover how we can power your business with technology and AI',
+            callToAction: 'Contact us to discover how we can empower your business with custom technology and AI.'
         },
         cta: {
             heading: 'Ready to transform your business?',
@@ -490,7 +771,7 @@ const translationData = {
             fields: {
                 name: { label: 'Name *', placeholder: 'Your name' },
                 email: { label: 'Email *', placeholder: 'you@email.com' },
-                phone: { label: 'Phone', placeholder: '+54 9 291 645-2157' },
+                phone: { label: 'Phone', placeholder: '+54 9 2926 41-4331' },
                 company: { label: 'Company', placeholder: 'Your company' },
                 message: { label: 'Message *', placeholder: 'Tell us about your project or question...' },
             },
@@ -721,7 +1002,7 @@ const translationData = {
             genericError: 'An unexpected error occurred. Please try again later.',
         },
         contactDetails: [
-            { label: 'WhatsApp', value: '+54 9 291 645-2157', href: 'https://wa.me/5492916452157', type: 'whatsapp' as const },
+            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: 'https://wa.me/5492926414331', type: 'whatsapp' as const },
         ],
     },
 } as const;

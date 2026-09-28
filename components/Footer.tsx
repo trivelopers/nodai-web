@@ -28,9 +28,9 @@ const Footer = () => {
     } as const;
 
     return (
-        <footer className="relative scroll-mt-20 border-t border-slate-200/70 bg-transparent dark:border-slate-700/70">
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-10 sm:py-16">
-                <div className="rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/80 p-5 sm:p-10 shadow-[0_25px_60px_rgba(15,23,42,0.15)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_35px_70px_rgba(2,6,23,0.5)] dark:backdrop-blur-3xl transition-all duration-500">
+        <footer className="relative scroll-mt-20 border-t border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-950/80">
+            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+                <div>
                     <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                         <div className="space-y-6 xl:col-span-1">
                             <img
@@ -43,14 +43,14 @@ const Footer = () => {
                                 alt="NODAI logo dark"
                                 className="hidden h-8 w-auto dark:block"
                             />
-                            <p className="text-slate-500 dark:text-slate-400 text-base">
+                            <p className="max-w-xs text-base leading-7 text-slate-500 dark:text-slate-400">
                                 {translations.footer.tagline}
                             </p>
                         </div>
                         <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-6 sm:gap-8 xl:mt-0 xl:col-span-2">
                             <div className="md:grid md:grid-cols-2 md:gap-8">
                                 <div>
-                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                    <h3 className="eyebrow text-slate-500 dark:text-slate-400">
                                         {translations.footer.navigationTitle}
                                     </h3>
                                     <ul className="mt-4 space-y-4">
@@ -67,7 +67,7 @@ const Footer = () => {
                                     </ul>
                                 </div>
                                 <div className="mt-10 md:mt-0">
-                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                    <h3 className="eyebrow text-slate-500 dark:text-slate-400">
                                         {translations.footer.legalTitle}
                                     </h3>
                                     <ul className="mt-4 space-y-4">
@@ -92,7 +92,7 @@ const Footer = () => {
                             </div>
                             <div className="md:grid md:grid-cols-1 md:gap-8">
                                 <div>
-                                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">
+                                    <h3 className="eyebrow text-slate-500 dark:text-slate-400">
                                         {translations.footer.contactTitle}
                                     </h3>
                                     <ul className="mt-4 space-y-4">
@@ -116,8 +116,8 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-12 border-t border-slate-200/60 pt-8 text-center">
-                        <p className="text-base text-slate-400 dark:text-slate-500">&copy; {new Date().getFullYear()} NODAI. {translations.footer.copyright}</p>
+                    <div className="mt-12 border-t border-slate-200 pt-6 dark:border-slate-800">
+                        <p className="technical-label text-slate-400 dark:text-slate-500">&copy; {new Date().getFullYear()} NODAI. {translations.footer.copyright}</p>
                     </div>
                 </div>
             </div>

@@ -6,30 +6,30 @@ const About = () => {
     const about = translations.about;
 
     return (
-        <section id="about" className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32">
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-                <div className="rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/80 p-5 sm:p-10 shadow-[0_25px_60px_rgba(15,23,42,0.12)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70 dark:shadow-[0_25px_55px_rgba(2,6,23,0.55)] dark:backdrop-blur-3xl transition-all duration-500">
-                    <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-                        <div>
-                            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+        <section id="about" className="relative scroll-mt-20 py-16 sm:py-20 lg:py-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="section-frame overflow-hidden rounded-3xl">
+                    <div className="grid lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+                        <div className="p-6 sm:p-10 lg:p-12">
+                            <h2 className="section-title">
                                 {about.title}
                             </h2>
                             {about.paragraphs.map((paragraph, index) => (
                                 <p
                                     key={index}
-                                    className={`${index === 0 ? 'mt-4' : 'mt-6'} text-base sm:text-lg text-slate-600 dark:text-slate-300`}
+                                    className={`${index === 0 ? 'mt-6' : 'mt-5'} max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300`}
                                 >
                                     {paragraph}
                                 </p>
                             ))}
-                            <h3 className="mt-8 text-xl font-bold text-slate-800 dark:text-slate-100">
+                            <h3 className="mt-8 border-l-2 border-teal-500 pl-4 text-base font-[650] leading-6 text-slate-900 dark:text-slate-100">
                                 {about.highlight}
                             </h3>
                         </div>
-                        <div className="mt-10 lg:mt-0">
-                            <div className="overflow-hidden rounded-2xl border border-slate-200/40 bg-gradient-to-br from-white to-slate-100 p-1 shadow-lg dark:border-slate-600/40 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-900/70 dark:to-slate-900">
+                        <div className="min-h-[320px] border-t border-slate-200 bg-slate-100 lg:border-l lg:border-t-0 dark:border-slate-800 dark:bg-slate-900">
+                            <div className="h-full overflow-hidden">
                                 <img
-                                    className="h-full w-full rounded-[inherit] object-cover shadow-xl"
+                                    className="h-full min-h-[320px] w-full object-cover grayscale-[15%] transition duration-500 hover:grayscale-0"
                                     src="/images/equipo.jpg"
                                     alt={about.imageAlt}
                                 />

@@ -21,4 +21,8 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+.vercel
+.env
+*.env
+acme.json
+traefik-data/acme.json

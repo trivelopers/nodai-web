@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from '../services/i18n';
+
 const serviceIcons = [
     (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -36,44 +37,64 @@ const serviceIcons = [
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 21V11l6-3v13" />
         </svg>
     ),
+    (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8 3.75h6.5L19 8.25V20H8a3 3 0 01-3-3V6.75a3 3 0 013-3z" />
+            <path strokeLinecap="round" d="M14 4v5h5M9 13h6m-6 3h4" />
+        </svg>
+    ),
+    (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5a3 3 0 00-3 3v4a3 3 0 006 0v-4a3 3 0 00-3-3z" />
+            <path strokeLinecap="round" d="M6.5 11.5a5.5 5.5 0 0011 0M12 17v3m-3 0h6" />
+        </svg>
+    ),
 ];
 
 
-const Services = () => {
+const Services: React.FC = () => {
     const { translations } = useTranslation();
-    const services = translations.services.items.slice(3);
-    const visibleIcons = serviceIcons.slice(3);
+    const primaryServices = translations.services.items.slice(0, 3);
+    const specializedServices = translations.services.items.slice(3);
 
     return (
-        <section id="services" className="relative scroll-mt-20 py-20 sm:py-28 lg:py-32">
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-                <div className="rounded-2xl sm:rounded-3xl border border-slate-200/60 bg-white/80 p-5 sm:p-10 shadow-[0_25px_60px_rgba(15,23,42,0.12)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-950/70 dark:shadow-[0_25px_55px_rgba(2,6,23,0.55)] dark:backdrop-blur-3xl transition-all duration-500">
-                    <div className="text-center">
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+        <section id="services" className="relative scroll-mt-20 py-16 sm:py-20 lg:py-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="section-frame rounded-3xl p-6 sm:p-10 lg:p-12">
+                    <div className="max-w-3xl">
+                        <h2 className="section-title">
                             {translations.services.title}
                         </h2>
-                        <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300">
-                            {translations.services.description}
+                        <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">
+                            {translations.services.subtitle}
                         </p>
                     </div>
-
-                    <div className="mt-10 sm:mt-16 grid gap-6 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                        {services.map((service, index) => (
-                            <div
-                                key={service.name}
-                                className="flex flex-col gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-slate-100 bg-white/90 p-5 sm:p-8 shadow-sm transition hover:border-slate-300 hover:shadow-[0_25px_35px_rgba(15,23,42,0.2)] dark:border-slate-800 dark:bg-white/5 dark:text-slate-200 dark:shadow-[0_25px_35px_rgba(2,6,23,0.6)] dark:hover:border-slate-600"
-                            >
-                                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-teal-400 to-sky-500 text-white shadow-lg">
-                                    {visibleIcons[index] ?? serviceIcons[index]}
+                    <div className="mt-8 grid gap-4 md:grid-cols-3">
+                        {primaryServices.map((service, index) => (
+                            <article key={service.name} className="flex min-h-60 flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 dark:hover:border-teal-700">
+                                <span className="technical-label text-slate-400">0{index + 1}</span>
+                                <div className="mt-auto flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300">
+                                    {serviceIcons[index]}
                                 </div>
-                                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    {service.name}
-                                </h3>
-                                <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300">
-                                    {service.description}
-                                </p>
-                            </div>
+                                <h3 className="mt-5 text-xl font-[650] tracking-tight text-slate-950 dark:text-white">{service.name}</h3>
+                                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.description}</p>
+                            </article>
                         ))}
+                    </div>
+
+                    <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-800 dark:bg-slate-900/60 sm:p-6">
+                        <h3 className="text-base font-[650] text-slate-950 dark:text-white">{translations.services.specializedTitle}</h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{translations.services.specializedSubtitle}</p>
+                        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                                {specializedServices.map((service, index) => (
+                                    <article key={service.name} className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                                        <div className="flex items-start gap-3">
+                                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300">{serviceIcons[index + 3]}</div>
+                                            <div><h4 className="font-semibold text-slate-950 dark:text-white">{service.name}</h4><p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.description}</p></div>
+                                        </div>
+                                    </article>
+                                ))}
+                        </div>
                     </div>
                 </div>
             </div>

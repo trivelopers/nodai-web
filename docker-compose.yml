@@ -1,0 +1,22 @@
+services:
+  nodai-web:
+    build: .
+    restart: unless-stopped
+    environment:
+      PORT: 8080
+      GMAIL_USER: ${GMAIL_USER}
+      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD}
+      CONTACT_TO: ${CONTACT_TO:-}
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nodai-web.rule=Host(`nodai.app`) || Host(`www.nodai.app`)
+      - traefik.http.routers.nodai-web.entrypoints=websecure
+      - traefik.http.routers.nodai-web.tls=true
+      - traefik.http.routers.nodai-web.tls.certresolver=letsencrypt
+      - traefik.http.services.nodai-web.loadbalancer.server.port=8080
+
+networks:
+  traefik:
+    external: true

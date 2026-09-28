@@ -7,136 +7,90 @@ interface HeaderProps {
     toggleTheme: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onAskNodaiClick, theme, toggleTheme }) => {
+const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
     const { translations, language, setLanguage } = useTranslation();
     const navLinks = translations.header.navLinks;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLanguageToggle = () => {
-        setLanguage(language === 'es' ? 'en' : 'es');
-    };
-
-    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+    const handleLanguageToggle = () => setLanguage(language === 'es' ? 'en' : 'es');
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
-                    <div className="flex-shrink-0 h-10 w-32 flex items-center">
-                        <a href="#" aria-label="NODAI Home">
-                            <img
-                                src={theme === 'dark' ? '/images/nodai-blanco.png' : '/images/nodai-negro.png'}
-                                alt="NODAI"
-                                className="h-full w-full object-contain transition-all duration-300"
-                            />
-                        </a>
-                    </div>
-                    <nav className="hidden md:flex md:space-x-8">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </nav>
-                    <div className="flex items-center space-x-2 sm:space-x-4">
-                        <div className="hidden md:flex items-center space-x-2 sm:space-x-4">
-                            <button
-                                onClick={handleLanguageToggle}
-                                className="px-3 py-1 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 rounded-full hover:border-teal-500 hover:text-teal-600 dark:hover:border-teal-400 dark:hover:text-teal-300 transition-colors"
-                                aria-label={translations.header.languageToggleAria}
-                            >
-                                {translations.header.languageLabels[language === 'es' ? 'en' : 'es']} · {translations.header.languageLabels[language]}
-                            </button>
-                            <button
-                                onClick={toggleTheme}
-                                className="px-3 py-1 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 rounded-full hover:border-teal-500 hover:text-teal-600 dark:hover:border-teal-400 dark:hover:text-teal-300 transition-colors"
-                                aria-label={translations.header.themeToggleAria}
-                            >
-                                <span className="sr-only">
-                                    {theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-                                </span>
-                                {theme === 'light' ? (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-                                    </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                        <button
-                            onClick={toggleMenu}
-                            className="md:hidden p-2 rounded-full text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-                            aria-expanded={isMenuOpen}
+        <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f4f7f6]/90 backdrop-blur-xl transition-colors dark:border-slate-800 dark:bg-[#091116]/90">
+            <div className="mx-auto flex h-[72px] max-w-7xl items-center gap-6 px-4 sm:px-6 lg:px-8">
+                <a href="#" aria-label="NODAI Home" className="flex h-9 w-[118px] shrink-0 items-center">
+                    <img
+                        src={theme === 'dark' ? '/images/nodai-blanco.png' : '/images/nodai-negro.png'}
+                        alt="NODAI"
+                        className="h-full w-full object-contain object-left"
+                    />
+                </a>
+
+                <nav className="ml-auto hidden items-center gap-1 md:flex" aria-label="Principal">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className="rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-white hover:text-slate-950 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
                         >
-                            <span className="sr-only">{isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                {isMenuOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                )}
+                            {link.name}
+                        </a>
+                    ))}
+                </nav>
+
+                <div className="ml-auto flex items-center gap-2 md:ml-2">
+                    <button
+                        onClick={handleLanguageToggle}
+                        className="h-9 rounded-full border border-slate-300 bg-white px-3 text-sm font-semibold text-slate-700 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
+                        aria-label={translations.header.languageToggleAria}
+                    >
+                        {language === 'es' ? 'EN' : 'ES'}
+                    </button>
+                    <button
+                        onClick={toggleTheme}
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-400"
+                        aria-label={translations.header.themeToggleAria}
+                    >
+                        {theme === 'light' ? (
+                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                                <circle cx="12" cy="12" r="4" />
+                                <path strokeLinecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
                             </svg>
-                        </button>
-                    </div>
+                        ) : (
+                            <svg className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 15.35A8.5 8.5 0 018.65 3.75a8.5 8.5 0 1011.6 11.6z" />
+                            </svg>
+                        )}
+                    </button>
+                    <button
+                        onClick={() => setIsMenuOpen((open) => !open)}
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 md:hidden dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+                        aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                        aria-expanded={isMenuOpen}
+                    >
+                        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                            {isMenuOpen
+                                ? <path strokeLinecap="round" d="M6 6l12 12M18 6 6 18" />
+                                : <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />}
+                        </svg>
+                    </button>
                 </div>
             </div>
+
             {isMenuOpen && (
-                <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg">
-                    <nav className="flex flex-col px-4 py-5 space-y-3">
+                <nav className="border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950" aria-label="Principal móvil">
+                    <div className="mx-auto flex max-w-7xl flex-col gap-1">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-base font-semibold text-slate-700 dark:text-slate-200 rounded-lg bg-slate-100/70 px-4 py-2 transition hover:bg-teal-100 dark:bg-slate-900/70 dark:hover:bg-slate-800/70"
+                                className="rounded-xl px-4 py-3 text-base font-semibold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <div className="flex flex-wrap items-center gap-2">
-                            <button
-                                onClick={handleLanguageToggle}
-                                className="px-3 py-1 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 rounded-full hover:border-teal-500 hover:text-teal-600 dark:hover:border-teal-400 dark:hover:text-teal-300 transition-colors"
-                                aria-label={translations.header.languageToggleAria}
-                            >
-                                {translations.header.languageLabels[language === 'es' ? 'en' : 'es']} · {translations.header.languageLabels[language]}
-                            </button>
-                            <button
-                                onClick={toggleTheme}
-                                className="px-3 py-1 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 rounded-full hover:border-teal-500 hover:text-teal-600 dark:hover:border-teal-400 dark:hover:text-teal-300 transition-colors"
-                                aria-label={translations.header.themeToggleAria}
-                            >
-                                <span className="sr-only">
-                                    {theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-                                </span>
-                                {theme === 'light' ? (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
-                                    </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             )}
         </header>
     );

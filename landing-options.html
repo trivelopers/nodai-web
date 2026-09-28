@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodAI — opciones de landing</title>
+  <style>
+    :root { --ink:#11221f; --muted:#60706c; --paper:#f7faf8; --line:#dce7e2; --mint:#60e2be; --teal:#0c705f; --dark:#10201d; --card:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--paper); }
+    button { font:inherit; cursor:pointer; }
+    .demo-bar { position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px max(24px,calc((100% - 1180px)/2)); border-bottom:1px solid #cce1d9; background:rgba(247,250,248,.92); backdrop-filter:blur(14px); }
+    .demo-bar p { margin:0; font-size:14px; color:var(--muted); }
+    .switcher { display:flex; gap:6px; padding:4px; border:1px solid var(--line); border-radius:999px; background:white; }
+    .switcher button { border:0; border-radius:999px; padding:8px 14px; color:#53635e; background:transparent; font-size:13px; font-weight:750; }
+    .switcher button.active { color:#06231c; background:var(--mint); }
+    .concept { display:none; }
+    .concept.active { display:block; }
+    .site { overflow:hidden; }
+    nav, .wrap { width:min(1180px,calc(100% - 48px)); margin:auto; }
+    nav { height:82px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:8px; font-size:25px; font-weight:850; letter-spacing:-1.5px; }
+    .brand i { width:27px; height:27px; position:relative; display:inline-block; border-radius:9px 9px 9px 2px; background:var(--mint); transform:rotate(-14deg); }
+    .brand i::after { content:""; width:9px; height:9px; position:absolute; right:-4px; bottom:-4px; border:4px solid var(--mint); border-radius:50%; }
+    .nav-links { display:flex; gap:28px; color:#465550; font-size:14px; font-weight:650; }
+    .nav-links a { color:inherit; text-decoration:none; }
+    .pill, .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:13px; padding:0 21px; text-decoration:none; font-weight:760; font-size:14px; transition:.2s transform,.2s background; }
+    .pill:hover, .btn:hover { transform:translateY(-2px); }
+    .pill { color:var(--ink); border:1px solid var(--line); background:white; }
+    .btn { color:white; background:var(--dark); box-shadow:0 12px 26px rgba(10,37,29,.14); }
+    .btn.mint { color:#06231c; background:var(--mint); }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--teal); font-size:12px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 4px rgba(96,226,190,.15); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:650px; margin-bottom:25px; font-size:clamp(43px,6vw,75px); letter-spacing:-.065em; line-height:.98; }
+    h2 { font-size:clamp(31px,4vw,48px); letter-spacing:-.055em; line-height:1.04; }
+    .lead { max-width:560px; color:var(--muted); font-size:18px; line-height:1.65; }
+    .hero { position:relative; padding:90px 0 86px; background:radial-gradient(circle at 77% 34%,rgba(96,226,190,.23),transparent 21%),linear-gradient(120deg,#f7faf8 30%,#eff8f4); }
+    .hero::before { content:""; position:absolute; inset:0; opacity:.55; background-image:linear-gradient(#d9ebe4 1px,transparent 1px),linear-gradient(90deg,#d9ebe4 1px,transparent 1px); background-size:44px 44px; mask-image:linear-gradient(to right,black,transparent 72%); }
+    .hero-grid { position:relative; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:72px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:35px; }
+    .product-window { padding:13px; border:1px solid rgba(255,255,255,.8); border-radius:28px; background:rgba(255,255,255,.8); box-shadow:0 30px 80px rgba(17,71,58,.16); transform:rotate(2deg); }
+    .window-bar { display:flex; align-items:center; justify-content:space-between; padding:4px 6px 14px; color:#6b7f78; font-size:11px; font-weight:800; letter-spacing:.1em; }
+    .dots { display:flex; gap:5px; }.dots span { width:8px;height:8px;border-radius:50%;background:#ff8e83; }.dots span:nth-child(2){background:#ffd278}.dots span:nth-child(3){background:#69d9b7}
+    .screen { min-height:342px; border-radius:18px; padding:24px; background:linear-gradient(150deg,#123b33,#174a3e); color:white; }
+    .screen .tiny { color:#aee8d6; font-size:12px; font-weight:750; }
+    .screen h3 { margin:14px 0 20px; font-size:26px; letter-spacing:-.04em; }
+    .metric-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }.metric { padding:14px; border:1px solid rgba(255,255,255,.15); border-radius:13px; background:rgba(255,255,255,.08); }.metric b { display:block; font-size:22px; }.metric span { color:#b4cec5; font-size:12px; }
+    section { padding:112px 0; }.soft { background:#edf5f1; }.dark { color:white; background:var(--dark); }
+    .section-top { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:42px; }.section-top p { max-width:435px; margin:0; color:var(--muted); line-height:1.6; }.dark .section-top p { color:#aac2ba; }
+    .capabilities { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }.capability { min-height:257px; padding:27px; border:1px solid var(--line); border-radius:20px; background:white; }.capability .number { color:#9ccfc0; font-size:13px; font-weight:850; }.capability h3 { margin:38px 0 11px; font-size:22px; letter-spacing:-.04em; }.capability p { color:var(--muted); line-height:1.55; }.arrow { color:var(--teal); font-size:25px; }
+    .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:17px; }.case { padding:32px; border-radius:21px; background:#173e35; }.case:nth-child(2){background:#266f5e}.case .tag { color:var(--mint); font-size:12px; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }.case h3 { margin:40px 0 10px; font-size:29px; letter-spacing:-.05em; }.case p { max-width:440px; color:#b9d4cb; line-height:1.6; }.case a { display:inline-block; margin-top:20px; color:white; text-decoration:none; font-weight:750; }
+    .cta { display:grid; grid-template-columns:1fr auto; align-items:center; gap:30px; padding:42px; border-radius:24px; background:var(--mint); }.cta h2 { margin:0; font-size:38px; }.cta p { margin:12px 0 0; color:#255a4d; }.cta .btn { white-space:nowrap; }
+    /* Option 2 */
+    .option-two .hero { padding-bottom:65px; }.question { max-width:790px; margin:auto; text-align:center; }.question h1 { max-width:none; }.question .lead { margin:0 auto; }
+    .path-picker { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:48px auto 0; text-align:left; }.path { min-height:184px; padding:22px; border:1px solid #d9e9e3; border-radius:19px; background:white; color:var(--ink); transition:.2s border,.2s transform,.2s box-shadow; }.path:hover,.path.selected { border-color:var(--teal); box-shadow:0 17px 34px rgba(25,82,68,.13); transform:translateY(-3px); }.path .icon { display:flex; width:40px;height:40px;align-items:center;justify-content:center;border-radius:12px;background:#e3fbf3;color:var(--teal);font-size:20px; }.path h3 { margin:22px 0 7px; font-size:18px; letter-spacing:-.03em; }.path p { margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
+    .path-detail { display:grid; grid-template-columns:.88fr 1.12fr; gap:52px; align-items:center; }.path-detail h2 { margin:13px 0 20px; }.checks { list-style:none; padding:0; margin:28px 0; }.checks li { display:flex; gap:11px; margin:13px 0; color:#d7e7e1; }.checks li::before { content:"✓"; color:var(--mint); font-weight:900; }.solution-preview { min-height:390px; padding:26px; border:1px solid rgba(255,255,255,.13); border-radius:25px; background:linear-gradient(145deg,#1f5549,#12332c); }.solution-preview .bar { height:11px; width:31%; border-radius:999px; background:#76e7c6; }.solution-preview .preview-lines { display:grid; gap:12px; margin-top:44px; }.preview-lines span { display:block; height:15px; border-radius:6px; background:rgba(229,255,247,.14); }.preview-lines span:nth-child(2){width:78%}.preview-lines span:nth-child(3){width:91%}.preview-card { margin-top:28px; padding:20px; border-radius:15px; background:#f4fff9; color:#19382f; }.preview-card b { display:block; margin-bottom:8px; }.preview-card small { color:#50746a; }
+    .proof-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:18px; }.quote { padding:34px; border:1px solid var(--line); border-radius:22px; background:white; }.quote p { margin:30px 0; font-size:24px; letter-spacing:-.035em; line-height:1.25; }.quote small { color:var(--muted); }.stats { display:grid; grid-template-columns:1fr 1fr; gap:18px; }.stat { display:flex; flex-direction:column; justify-content:end; min-height:180px; padding:25px; border-radius:22px; background:#d9f7ec; }.stat:nth-child(2){background:#edf5f1}.stat b { font-size:42px; letter-spacing:-.06em; }.stat span { margin-top:7px; color:#4e6960; }
+    @media (max-width:800px) { .demo-bar { align-items:flex-start; flex-direction:column; padding:12px 18px; }.demo-bar p { font-size:12px; }.switcher { width:100%; }.switcher button { flex:1; padding:8px 6px; font-size:12px; } nav,.wrap { width:min(100% - 32px,1180px); } nav { height:70px; }.nav-links { display:none; }.hero { padding:60px 0; }.hero-grid,.path-detail,.proof-grid { grid-template-columns:1fr; gap:35px; }.product-window { max-width:480px; margin:auto; }.capabilities,.path-picker { grid-template-columns:1fr; }.case-grid { grid-template-columns:1fr; }.section-top,.cta { align-items:start; flex-direction:column; }.cta { display:flex; padding:30px; }.cta h2 { font-size:30px; } section { padding:75px 0; }.screen { min-height:290px; } }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <p>Prototipo de decisión · no modifica la landing actual</p>
+    <div class="switcher" role="tablist" aria-label="Opciones de landing">
+      <button class="active" data-target="short" role="tab" aria-selected="true">1 · Landing corta</button>
+      <button data-target="selector" role="tab" aria-selected="false">2 · Selector de necesidad</button>
+    </div>
+  </div>
+
+  <main>
+    <article id="short" class="concept active site option-one">
+      <nav><div class="brand"><i></i>nodai</div><div class="nav-links"><a href="#capacidades">Qué hacemos</a><a href="#casos">Casos reales</a></div><a class="pill" href="#contacto-corto">Hablemos</a></nav>
+      <header class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">Tecnología aplicada a tu negocio</span><h1>Convertimos procesos complejos en productos simples.</h1><p class="lead">Diseñamos software a medida, automatizaciones e integraciones para que tu empresa opere mejor y crezca sin fricción.</p><div class="hero-actions"><a href="#contacto-corto" class="btn">Contanos qué necesitás <span>&nbsp;→</span></a><a href="#casos" class="pill">Ver casos reales</a></div></div><div class="product-window"><div class="window-bar"><div class="dots"><span></span><span></span><span></span></div><span>OPERACIÓN CONECTADA</span></div><div class="screen"><span class="tiny">NODAI / PANEL DE OPERACIONES</span><h3>Todo tu negocio, en un flujo más claro.</h3><div class="metric-grid"><div class="metric"><b>− 38%</b><span>tareas manuales</span></div><div class="metric"><b>24/7</b><span>atención automatizada</span></div><div class="metric"><b>1 vista</b><span>operación centralizada</span></div><div class="metric"><b>↗</b><span>lista para escalar</span></div></div></div></div></div></header>
+      <section id="capacidades"><div class="wrap"><div class="section-top"><div><span class="eyebrow">Lo que resolvemos</span><h2>Una solución adecuada, no un catálogo infinito.</h2></div><p>Partimos de cómo funciona tu empresa y construimos solo lo necesario para mejorar el resultado.</p></div><div class="capabilities"><article class="capability"><span class="number">01</span><h3>Software a medida</h3><p>Portales, paneles y herramientas alineadas a tu forma de trabajar.</p><span class="arrow">→</span></article><article class="capability"><span class="number">02</span><h3>Automatización con IA</h3><p>Atención, clasificación y seguimiento sin sumar carga a tu equipo.</p><span class="arrow">→</span></article><article class="capability"><span class="number">03</span><h3>Integraciones</h3><p>Conectamos lo que ya usás para evitar operaciones duplicadas.</p><span class="arrow">→</span></article></div></div></section>
+      <section id="casos" class="dark"><div class="wrap"><div class="section-top"><div><span class="eyebrow">Casos reales</span><h2>Resultados que ya están en producción.</h2></div><p>En lugar de enumerar cada producto, mostramos evidencia de lo que la tecnología cambió para otros negocios.</p></div><div class="case-grid"><article class="case"><span class="tag">Salud · COEM</span><h3>Turnos y atención por WhatsApp.</h3><p>Una experiencia de reserva y confirmación más simple para pacientes y equipo administrativo.</p><a href="#contacto-corto">Ver el caso →</a></article><article class="case"><span class="tag">Comercio · Verde Manzana</span><h3>Catálogo, pedidos y operación en un solo lugar.</h3><p>Una plataforma preparada para vender online sin complicar la gestión cotidiana.</p><a href="#contacto-corto">Ver el caso →</a></article></div></div></section>
+      <section id="contacto-corto"><div class="wrap"><div class="cta"><div><h2>¿Hay un proceso que hoy te está frenando?</h2><p>Contanos en qué etapa está tu negocio y pensamos el próximo paso juntos.</p></div><a class="btn" href="mailto:hola@nodai.com">Iniciar conversación →</a></div></div></section>
+    </article>
+
+    <article id="selector" class="concept site option-two">
+      <nav><div class="brand"><i></i>nodai</div><div class="nav-links"><a href="#como">Cómo funciona</a><a href="#prueba">Casos reales</a></div><a class="pill" href="#selector-contacto">Hablemos</a></nav>
+      <header class="hero"><div class="wrap question"><span class="eyebrow">Empecemos por tu necesidad</span><h1>¿Qué querés mejorar en tu negocio?</h1><p class="lead">Elegí el desafío más cercano a tu momento actual. Te mostramos cómo podríamos encararlo.</p><div class="path-picker" role="tablist" aria-label="Necesidades"><button class="path selected" data-path="software"><span class="icon">⌘</span><h3>Crear software</h3><p>Necesito una herramienta adaptada a mi operación.</p></button><button class="path" data-path="automatizar"><span class="icon">✦</span><h3>Automatizar atención</h3><p>Quiero responder y hacer seguimiento sin tareas repetitivas.</p></button><button class="path" data-path="integrar"><span class="icon">↔</span><h3>Conectar sistemas</h3><p>Quiero evitar cargar o consultar la misma información dos veces.</p></button></div></div></header>
+      <section id="como" class="dark"><div class="wrap path-detail"><div><span class="eyebrow" id="detail-eyebrow">TU DESAFÍO / SOFTWARE</span><h2 id="detail-title">Tu operación merece una herramienta propia.</h2><p class="lead" id="detail-copy">Diseñamos una plataforma que respeta tu flujo real y elimina las planillas, pasos y errores que hoy consumen tiempo.</p><ul class="checks" id="detail-checks"><li>Diseñada alrededor de tu proceso</li><li>Paneles claros para tu equipo</li><li>Lista para sumar integraciones e IA</li></ul><a href="#selector-contacto" class="btn mint">Quiero explorar esta opción →</a></div><div class="solution-preview"><div class="bar"></div><div class="preview-lines"><span></span><span></span><span></span></div><div class="preview-card"><b id="preview-title">Operación centralizada</b><small id="preview-copy">Un único lugar para que cada persona sepa qué hacer.</small></div></div></div></section>
+      <section id="prueba"><div class="wrap"><div class="section-top"><div><span class="eyebrow">Prueba antes que promesa</span><h2>Elegís un camino; después vemos casos similares.</h2></div><p>La página entrega relevancia desde el primer scroll y deja la explicación extensa para cuando la persona ya mostró interés.</p></div><div class="proof-grid"><article class="quote"><span class="eyebrow">Caso relacionado</span><p id="quote-text">“El sistema de turnos y WhatsApp ordenó la atención y redujo el ida y vuelta manual del equipo.”</p><small id="quote-author">COEM · Salud</small></article><div class="stats"><article class="stat"><b id="stat-number">1</b><span id="stat-label">flujo de trabajo unificado</span></article><article class="stat"><b>3 pasos</b><span>para entender la necesidad antes de proponer</span></article></div></div></div></section>
+      <section id="selector-contacto" class="soft"><div class="wrap"><div class="cta"><div><h2>Ya elegiste por dónde empezar.</h2><p>Ahora podemos convertir esa necesidad en una conversación concreta.</p></div><a class="btn" href="mailto:hola@nodai.com">Contar mi caso →</a></div></div></section>
+    </article>
+  </main>
+  <script>
+    const tabs = document.querySelectorAll('.switcher button');
+    const concepts = document.querySelectorAll('.concept');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(item => { item.classList.toggle('active', item === tab); item.setAttribute('aria-selected', item === tab ? 'true' : 'false'); });
+      concepts.forEach(concept => concept.classList.toggle('active', concept.id === tab.dataset.target));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }));
+    const content = {
+      software: { eyebrow:'TU DESAFÍO / SOFTWARE', title:'Tu operación merece una herramienta propia.', copy:'Diseñamos una plataforma que respeta tu flujo real y elimina las planillas, pasos y errores que hoy consumen tiempo.', checks:['Diseñada alrededor de tu proceso','Paneles claros para tu equipo','Lista para sumar integraciones e IA'], previewTitle:'Operación centralizada', previewCopy:'Un único lugar para que cada persona sepa qué hacer.', quote:'“El sistema de turnos y WhatsApp ordenó la atención y redujo el ida y vuelta manual del equipo.”', author:'COEM · Salud', stat:'1', label:'flujo de trabajo unificado' },
+      automatizar: { eyebrow:'TU DESAFÍO / AUTOMATIZACIÓN', title:'Tu equipo no debería repetir lo que una IA puede resolver.', copy:'Automatizamos consultas frecuentes, clasificación y seguimiento para que las personas intervengan donde realmente agregan valor.', checks:['Respuestas consistentes 24/7','Derivación al área correcta','Seguimiento sin tareas manuales'], previewTitle:'Atención que no se detiene', previewCopy:'Cada consulta llega a una respuesta o al equipo indicado.', quote:'“El chatbot ayudó a ordenar consultas y a responder sin perder el tono humano del negocio.”', author:'Sys Inmobiliaria · Real estate', stat:'24/7', label:'atención disponible' },
+      integrar: { eyebrow:'TU DESAFÍO / INTEGRACIONES', title:'Que tus sistemas trabajen juntos, no en paralelo.', copy:'Conectamos CRM, ERP, WhatsApp, pagos y bases de datos para que la información llegue una vez y esté disponible donde se necesita.', checks:['Menos carga duplicada','Información actualizada entre equipos','Procesos trazables de punta a punta'], previewTitle:'Datos conectados', previewCopy:'La operación se sincroniza sin perseguir información.', quote:'“La plataforma unificó catálogo, pedidos y gestión comercial en una experiencia más simple.”', author:'Verde Manzana · Comercio', stat:'0', label:'cargas manuales duplicadas' }
+    };
+    document.querySelectorAll('.path').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.path').forEach(item => item.classList.toggle('selected', item === button));
+      const item = content[button.dataset.path];
+      document.getElementById('detail-eyebrow').textContent = item.eyebrow;
+      document.getElementById('detail-title').textContent = item.title;
+      document.getElementById('detail-copy').textContent = item.copy;
+      document.getElementById('detail-checks').innerHTML = item.checks.map(check => `<li>${check}</li>`).join('');
+      document.getElementById('preview-title').textContent = item.previewTitle;
+      document.getElementById('preview-copy').textContent = item.previewCopy;
+      document.getElementById('quote-text').textContent = item.quote;
+      document.getElementById('quote-author').textContent = item.author;
+      document.getElementById('stat-number').textContent = item.stat;
+      document.getElementById('stat-label').textContent = item.label;
+    }));
+  </script>
+</body>
+</html>
