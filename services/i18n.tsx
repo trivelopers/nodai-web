@@ -207,6 +207,7 @@ const translationData = {
                 {
                     name: 'Fragma',
                     logo: '/images/clients/fragma.png',
+                    website: 'https://fragma.com.ar'
                 },
                 {
                     name: 'COEM',
@@ -713,6 +714,7 @@ const translationData = {
                 {
                     name: 'Fragma',
                     logo: '/images/clients/fragma.png',
+                    website: 'https://fragma.com.ar'
                 },
                 {
                     name: 'COEM',
