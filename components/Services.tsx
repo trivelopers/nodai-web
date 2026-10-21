@@ -73,7 +73,7 @@ const Services: React.FC = () => {
                         {primaryServices.map((service, index) => (
                             <article key={service.name} className="flex min-h-60 flex-col rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 dark:hover:border-teal-700">
                                 <span className="technical-label text-slate-400">0{index + 1}</span>
-                                <div className="mt-auto flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300">
+                                <div className="mt-auto flex h-11 w-11 items-center justify-center rounded-xl bg-teal-400/10 text-teal-400">
                                     {serviceIcons[index]}
                                 </div>
                                 <h3 className="mt-5 text-xl font-[650] tracking-tight text-slate-950 dark:text-white">{service.name}</h3>
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
                                 {specializedServices.map((service, index) => (
                                     <article key={service.name} className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
                                         <div className="flex items-start gap-3">
-                                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300">{serviceIcons[index + 3]}</div>
+                                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-400/10 text-teal-400">{serviceIcons[index + 3]}</div>
                                             <div><h4 className="font-semibold text-slate-950 dark:text-white">{service.name}</h4><p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{service.description}</p></div>
                                         </div>
                                     </article>
