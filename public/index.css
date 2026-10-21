@@ -105,6 +105,8 @@ select { font: inherit; }
     display: flex;
     width: max-content;
     gap: 14px;
+    /* Include the final gap so both halves have exactly the same width. */
+    padding-right: 14px;
     animation: logo-marquee-slide 32s linear infinite;
 }
 
@@ -180,7 +182,7 @@ select { font: inherit; }
 
 @keyframes logo-marquee-slide {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-50% - 7px)); }
+    to { transform: translateX(-50%); }
 }
 
 .eyebrow {

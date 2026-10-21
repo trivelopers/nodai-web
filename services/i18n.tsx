@@ -502,7 +502,7 @@ const translationData = {
             genericError: 'Ocurrió un error inesperado. Intenta nuevamente más tarde.',
         },
         contactDetails: [
-            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: 'https://wa.me/5492926414331', type: 'whatsapp' as const },
+            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: `https://wa.me/5492926414331?text=${encodeURIComponent("¡Hola, nodai! Vengo desde la web y me gustaría consultar por una solución para mi negocio.\n\nMi nombre: [tu nombre]\nEmpresa o emprendimiento: [nombre]\nNecesito: [contanos brevemente qué querés resolver]\n\n¿Podemos coordinar una primera charla?")}`, type: 'whatsapp' as const },
         ],
     },
     en: {
@@ -1004,7 +1004,7 @@ const translationData = {
             genericError: 'An unexpected error occurred. Please try again later.',
         },
         contactDetails: [
-            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: 'https://wa.me/5492926414331', type: 'whatsapp' as const },
+            { label: 'WhatsApp', value: '+54 9 2926 41-4331', href: `https://wa.me/5492926414331?text=${encodeURIComponent("Hi, nodai! I found you through your website and would like to discuss a solution for my business.\n\nMy name: [your name]\nCompany or business: [name]\nI need: [briefly describe what you would like to solve]\n\nCould we arrange an initial chat?")}`, type: 'whatsapp' as const },
         ],
     },
 } as const;
