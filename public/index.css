@@ -256,3 +256,17 @@ select { font: inherit; }
 @media(max-width:1023px){.organic-field{height:430px}}
 @media(max-width:600px){.organic-field{height:390px}.organic-node.is-nodai{font-size:21px}}
 @media(pointer:coarse){.organic-node{min-width:44px;min-height:44px}}
+
+.organic-field::before{background:radial-gradient(ellipse,#2dd4bf2e,transparent 68%)}
+.organic-bridge{fill:#2dd4bf}
+.organic-thread{stroke:#2dd4bf}
+.organic-signal{fill:#2dd4bf}
+.organic-node{background:radial-gradient(circle at 32% 26%,#2dd4bfbd,#0f766e9c);box-shadow:inset 0 1px 2px #ffffff60,0 5px 30px #2dd4bf1a}
+.organic-node::before{background:#2dd4bf22}
+.organic-node:hover::before,.organic-node:focus-visible::before{background:#2dd4bf35}
+.organic-node.is-soft{background:radial-gradient(circle at 30% 20%,#5eead480,#14b8a666)}
+.organic-node.is-soft::before{background:#2dd4bf16}
+.organic-node:focus-visible{outline-color:#2dd4bf}
+.organic-node.is-nodai{background:radial-gradient(circle at 30% 22%,#2dd4bf,#0f766e);color:#042f2e;box-shadow:inset 0 1px 3px #ffffff70,0 10px 35px #2dd4bf40}
+.organic-node.is-nodai::before{background:#2dd4bf35;box-shadow:0 0 36px #2dd4bf38,inset 0 1px 2px #ffffff40}
+.organic-node.is-nodai:hover::before,.organic-node.is-nodai:focus-visible::before{background:#2dd4bf55}
