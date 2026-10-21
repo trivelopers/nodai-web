@@ -4,10 +4,6 @@ import { useTranslation } from '../services/i18n';
 interface Client {
     name: string;
     subtitle?: string;
-    industry: string;
-    solution: string;
-    tag: string;
-    description: string;
     logo?: string;
     website?: string;
 }
@@ -40,7 +36,6 @@ const Clients: React.FC = () => {
         observer.observe(marquee);
         return () => observer.disconnect();
     }, [clients.length]);
-    const slugify = (name: string) => name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
     return (
         <>
@@ -51,27 +46,30 @@ const Clients: React.FC = () => {
                 </div>
                 <div ref={marqueeRef} className="logo-marquee mt-9" aria-label={section.title}>
                     <div className="logo-marquee__track">
-                        {logos.map((client, index) => (
-                            <a
-                                key={`${client.name}-${index}`}
-                                href={client.website ?? `#case/${slugify(client.name)}`}
-                                className="logo-marquee__item"
-                                aria-hidden={index >= clients.length}
-                                tabIndex={index >= clients.length ? -1 : undefined}
-                                aria-label={index < clients.length ? (language === 'es' ? `Visitar ${client.name}` : `Visit ${client.name}`) : undefined}
-                            >
-                                {client.logo ? (
-                                    <img
-                                        src={client.logo}
-                                        alt=""
-                                        className="logo-marquee__image"
-                                    />
-                                ) : (
-                                    <span className="logo-marquee__wordmark">{client.name}</span>
-                                )}
-                                <span className="logo-marquee__label">{client.name}<b aria-hidden="true">↗</b></span>
-                            </a>
-                        ))}
+                        {logos.map((client, index) => {
+                            const Card = client.website ? 'a' : 'div';
+                            return (
+                                <Card
+                                    key={`${client.name}-${index}`}
+                                    href={client.website}
+                                    className="logo-marquee__item"
+                                    aria-hidden={index >= clients.length}
+                                    tabIndex={client.website && index >= clients.length ? -1 : undefined}
+                                    aria-label={client.website && index < clients.length ? (language === 'es' ? `Visitar ${client.name}` : `Visit ${client.name}`) : undefined}
+                                >
+                                    {client.logo ? (
+                                        <img
+                                            src={client.logo}
+                                            alt=""
+                                            className="logo-marquee__image"
+                                        />
+                                    ) : (
+                                        <span className="logo-marquee__wordmark">{client.name}</span>
+                                    )}
+                                    <span className="logo-marquee__label">{client.name}{client.website && <b aria-hidden="true">↗</b>}</span>
+                                </Card>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

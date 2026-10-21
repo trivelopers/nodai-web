@@ -19,7 +19,7 @@ const translationData = {
         hero: {
             title: 'Impulsamos tu negocio con inteligencia.',
             description: 'Desarrollamos soluciones tecnológicas que optimizan procesos y hacen crecer tu negocio.',
-            cta: 'Agendá una demo',
+            cta: 'Contanos tu idea',
             carousel: {
                 statusOnline: 'IA ACTIVA · EN LÍNEA',
                 tabs: {
@@ -204,6 +204,10 @@ const translationData = {
                 'concretos de negocio, optimizan la atención y automatizan procesos clave.'
             ],
             items: [
+                {
+                    name: 'Fragma',
+                    logo: '/images/clients/fragma.png',
+                },
                 {
                     name: 'COEM',
                     subtitle: 'Consultorios de Especialidades Médicas',
@@ -521,7 +525,7 @@ const translationData = {
         hero: {
             title: 'We boost your business with intelligence.',
             description: 'We develop technology solutions that optimize processes and help your business grow.',
-            cta: 'Book a demo',
+            cta: 'Tell us your idea',
             carousel: {
                 statusOnline: 'AI ACTIVE · ONLINE',
                 tabs: {
@@ -706,6 +710,10 @@ const translationData = {
                 'challenges, enhance customer experience, and automate key operational workflows.'
             ],
             items: [
+                {
+                    name: 'Fragma',
+                    logo: '/images/clients/fragma.png',
+                },
                 {
                     name: 'COEM',
                     subtitle: 'Medical Specialty Clinics',
