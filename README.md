@@ -4,6 +4,31 @@
 
 # NodAI - AI Business Solutions
 
+## SEO e idiomas
+
+`npm run build` genera HTML completo y metadatos por idioma: español en `/` e inglés
+en `/en/`. La URL determina el idioma; las preferencias anteriores y el idioma del
+navegador no cambian el contenido. El selector enlaza ambas versiones y conserva
+la sección activa. El build incluye canonical, hreflang, Open Graph, datos
+estructurados de Organization/WebSite/WebPage, `robots.txt` y `sitemap.xml`.
+
+El dominio canónico es `https://nodai.app`. Si cambia, actualizar también
+`scripts/prerender.mjs`, `index.html`, `public/robots.txt` y `public/sitemap.xml`.
+
+Para terminar la configuración de Google Search Console:
+
+1. Publicar el build en el proyecto que sirve `https://nodai.app/`.
+2. Abrir la propiedad de prefijo de URL `https://nodai.app/` y verificar con el
+   método **Etiqueta HTML**. La etiqueta entregada por Google ya está incorporada
+   en `index.html`; conservarla en los próximos despliegues.
+3. En **Sitemaps**, enviar `https://nodai.app/sitemap.xml`.
+4. En **Inspección de URLs**, comprobar `/` y `/en/` con la prueba en vivo y
+   solicitar la indexación.
+5. En **Rendimiento**, filtrar la consulta `nodai` para medir impresiones,
+   clics y posición cuando Google disponga de datos.
+
+La configuración local no confirma que Google haya verificado o indexado el sitio.
+
 This contains everything you need to run your app locally or deploy it with Docker and Traefik.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1pXA4C2vbFQG8T9UwngM75mFmi1BoCFH7

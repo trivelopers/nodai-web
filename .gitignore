@@ -26,3 +26,5 @@ dist-ssr
 *.env
 acme.json
 traefik-data/acme.json
+
+.prerender/

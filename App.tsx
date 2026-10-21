@@ -9,12 +9,12 @@ import CTA from './components/CTA';
 import CaseStudy from './components/CaseStudy';
 import Footer from './components/Footer';
 import ThinkingModeModal from './components/ThinkingModeModal';
-import { TranslationProvider } from './services/i18n';
+import { TranslationProvider, type Language } from './services/i18n';
 
 const AppContent: React.FC = () => {
     const [theme, setTheme] = useState('light');
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [caseSlug, setCaseSlug] = useState(() => window.location.hash.match(/^#case\/([^/]+)$/)?.[1] ?? null);
+    const [caseSlug, setCaseSlug] = useState<string | null>(null);
 
     useEffect(() => {
         // Siempre cargar en modo light por defecto
@@ -24,6 +24,7 @@ const AppContent: React.FC = () => {
 
     useEffect(() => {
         const syncCaseRoute = () => setCaseSlug(window.location.hash.match(/^#case\/([^/]+)$/)?.[1] ?? null);
+        syncCaseRoute();
         window.addEventListener('hashchange', syncCaseRoute);
         return () => window.removeEventListener('hashchange', syncCaseRoute);
     }, []);
@@ -87,9 +88,9 @@ const AppContent: React.FC = () => {
     );
 };
 
-export default function App() {
+export default function App({ initialLanguage }: { initialLanguage?: Language } = {}) {
     return (
-        <TranslationProvider>
+        <TranslationProvider initialLanguage={initialLanguage}>
             <AppContent />
         </TranslationProvider>
     );

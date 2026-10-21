@@ -8,9 +8,14 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
+const application = (
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, application);
+} else {
+  ReactDOM.createRoot(rootElement).render(application);
+}

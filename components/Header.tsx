@@ -8,11 +8,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
-    const { translations, language, setLanguage } = useTranslation();
+    const { translations, language } = useTranslation();
     const navLinks = translations.header.navLinks;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLanguageToggle = () => setLanguage(language === 'es' ? 'en' : 'es');
 
     return (
         <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f4f7f6]/90 backdrop-blur-xl transition-colors dark:border-slate-800 dark:bg-[#091116]/90">
@@ -38,13 +37,19 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                 </nav>
 
                 <div className="ml-auto flex items-center gap-2 md:ml-2">
-                    <button
-                        onClick={handleLanguageToggle}
-                        className="h-9 rounded-full border border-slate-300 bg-white px-3 text-sm font-semibold text-slate-700 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
+                    <a
+                        href={language === 'es' ? '/en/' : '/'}
+                        hrefLang={language === 'es' ? 'en' : 'es'}
+                        onClick={(event) => {
+                            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                            event.preventDefault();
+                            window.location.assign(`${language === 'es' ? '/en/' : '/'}${window.location.search}${window.location.hash}`);
+                        }}
+                        className="inline-flex h-9 items-center rounded-full border border-slate-300 bg-white px-3 text-sm font-semibold text-slate-700 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
                         aria-label={translations.header.languageToggleAria}
                     >
                         {language === 'es' ? 'EN' : 'ES'}
-                    </button>
+                    </a>
                     <button
                         onClick={toggleTheme}
                         className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-teal-600 hover:text-teal-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-400"

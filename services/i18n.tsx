@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState, useEffect } from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 export type Language = 'es' | 'en';
 
@@ -1019,48 +1019,18 @@ interface TranslationContextValue {
 
 const TranslationContext = createContext<TranslationContextValue | undefined>(undefined);
 
-const LANGUAGE_STORAGE_KEY = 'nodai-language';
-
-const detectBrowserLanguage = (): Language => {
-    if (typeof navigator === 'undefined') {
-        return 'es';
-    }
-
-    const browserLanguage = navigator.language || (Array.isArray(navigator.languages) ? navigator.languages[0] : undefined);
-    if (browserLanguage && browserLanguage.toLowerCase().startsWith('en')) {
-        return 'en';
-    }
-
-    return 'es';
-};
-
 export const formatDateForLanguage = (language: Language) => {
     const locale = language === 'en' ? 'en-US' : 'es-AR';
     return new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date());
 };
 
-export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [language, setLanguage] = useState<Language>(() => {
-        if (typeof window === 'undefined') {
-            return 'es';
-        }
-
-        const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-        if (stored === 'es' || stored === 'en') {
-            return stored;
-        }
-
-        return detectBrowserLanguage();
-    });
-
-    useEffect(() => {
-        if (typeof window === 'undefined') {
-            return;
-        }
-
-        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-        document.documentElement.setAttribute('lang', language === 'en' ? 'en' : 'es');
-    }, [language]);
+export const TranslationProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({ children, initialLanguage }) => {
+    // A URL always has the same language, independent of browser settings/storage.
+    const language: Language = initialLanguage ?? (typeof window !== 'undefined' && /^\/en(?:\/|$)/.test(window.location.pathname) ? 'en' : 'es');
+    const setLanguage = (nextLanguage: Language) => {
+        if (typeof window === 'undefined') return;
+        window.location.assign(`${nextLanguage === 'en' ? '/en/' : '/'}${window.location.search}${window.location.hash}`);
+    };
 
     const value = useMemo(
         () => ({

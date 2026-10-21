@@ -7,7 +7,7 @@
     "dev": "node scripts/dev.mjs",
     "dev:web": "vite",
     "dev:mail": "PORT=3001 node server.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "NODE_ENV=production node server.mjs"
   },
   "dependencies": {

@@ -50,6 +50,8 @@ const mimeTypes = {
     '.jpeg': 'image/jpeg',
     '.jpg': 'image/jpeg',
     '.js': 'text/javascript; charset=utf-8',
+    '.txt': 'text/plain; charset=utf-8',
+    '.xml': 'application/xml; charset=utf-8',
     '.json': 'application/json; charset=utf-8',
     '.png': 'image/png',
     '.svg': 'image/svg+xml',
@@ -184,7 +186,8 @@ const serveStaticFile = (request, response, pathname) => {
         return;
     }
 
-    if (!existsSync(filePath) || statSync(filePath).isDirectory()) filePath = path.join(staticDirectory, 'index.html');
+    if (existsSync(filePath) && statSync(filePath).isDirectory()) filePath = path.join(filePath, 'index.html');
+    if (!existsSync(filePath)) filePath = path.join(staticDirectory, 'index.html');
 
     if (!existsSync(filePath)) {
         response.writeHead(404, securityHeaders);
@@ -193,7 +196,7 @@ const serveStaticFile = (request, response, pathname) => {
     }
 
     const extension = path.extname(filePath).toLowerCase();
-    const cacheControl = filePath.endsWith('index.html') ? 'no-cache' : 'public, max-age=31536000, immutable';
+    const cacheControl = ['.html', '.xml', '.txt'].includes(extension) ? 'no-cache' : 'public, max-age=31536000, immutable';
     response.writeHead(200, {
         ...securityHeaders,
         'Cache-Control': cacheControl,
